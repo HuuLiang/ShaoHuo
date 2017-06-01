@@ -73,7 +73,8 @@ final class HomeInteractor: Interactor {
             "app_version": ez.appVersionAndBuild ?? "",
             "device_name": UIDevice.deviceName(),
             "device_version": UIDevice.CURRENT_VERSION,
-            "device_mode": UIDevice.deviceModel()
+            "device_mode": UIDevice.deviceModel(),
+            "mobile_type": "1"
         ]
         
         UserLoginModel.shared.postUserDeviceInfo(params) { (error) in

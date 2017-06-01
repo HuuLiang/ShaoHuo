@@ -24,6 +24,9 @@ protocol HomeViewInterface {
     ///
     /// - Returns:
     func showOrderShippingList() -> Void
+    
+    func showNoNetWorkErrorView() -> Void
+    func hideNoNetWorkErrorView() -> Void
 }
 
 //MARK: Home View
@@ -34,6 +37,8 @@ final class HomeView: UserInterface {
     var tableView: UITableView?
     
     var currentSlectedIndex: IndexPath?
+    
+    var noNetworkView: UIView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,9 +66,6 @@ final class HomeView: UserInterface {
             let _ = make?.top.equalTo()(self.segmentedControl.mas_bottom)
             let _ = make?.bottom.equalTo()(-49)
         }
-//        self.tableView?.contentInset = UIEdgeInsets(top: 35, left: 0, bottom: 0, right: 0)
-//        self.automaticallyAdjustsScrollViewInsets = false
-//        self.edgesForExtendedLayout = UIRectEdge.all
        
         self.tableView?.register(UINib(nibName: "TitleLabelTableViewCell", bundle: nil),
                                   forCellReuseIdentifier: TitleLabelTableViewCell.className)
@@ -84,7 +86,7 @@ final class HomeView: UserInterface {
         log.info("OrderActionTableViewCell: \(OrderActionTableViewCell.className)")
         
         self.tableView?.rowHeight = UITableViewAutomaticDimension
-        self.tableView?.estimatedRowHeight = 100
+        self.tableView?.estimatedRowHeight = 75
         
         self.tableView?.delegate = self
         self.tableView?.dataSource = self
@@ -120,9 +122,49 @@ final class HomeView: UserInterface {
         placeholdView.mas_makeConstraints { (make) in
             let _ = make?.left.equalTo()(0)
             let _ = make?.right.equalTo()(0)
-            let _ = make?.height.equalTo()(64)
+            let _ = make?.height.equalTo()(19)
             let _ = make?.top.equalTo()(0)
         }
+        
+        self.noNetworkView = UIView()
+        self.noNetworkView?.backgroundColor = UIColor(hexString: "feeeee")
+        self.view.addSubview(self.noNetworkView!)
+        self.noNetworkView!.mas_makeConstraints { (make) in
+            let _ = make?.left.equalTo()(0)
+            let _ = make?.right.equalTo()(0)
+            let _ = make?.height.equalTo()(35)
+            let _ = make?.top.equalTo()(29)
+        }
+        
+        let erroImageView = UIImageView(image: UIImage(named: "icon_no_network"))
+        self.noNetworkView!.addSubview(erroImageView)
+        erroImageView.mas_makeConstraints { (make) in
+            let _ = make?.left.equalTo()(14)
+            let _ = make?.size.equalTo()(CGSize(width: 19, height: 19))
+            let _ = make?.centerY.equalTo()(0)
+        }
+        
+        let erroTipMsgLabel = UILabel()
+        erroTipMsgLabel.text = "网络异常，请检查网络！"
+        erroTipMsgLabel.font = UIFont.systemFont(ofSize: 15)
+        erroTipMsgLabel.textColor = UIColor(hexString: "333333")
+        self.noNetworkView!.addSubview(erroTipMsgLabel)
+        erroTipMsgLabel.mas_makeConstraints { (make) in
+            let _ = make?.left.equalTo()(erroImageView.mas_right)?.setOffset(14)
+            let _ = make?.right.equalTo()(-14)
+            let _ = make?.height.equalTo()(20)
+            let _ = make?.top.equalTo()(7)
+        }
+        let sepLineView = UIView()
+        sepLineView.backgroundColor = CMCColor.normalLineColor
+        self.noNetworkView!.addSubview(sepLineView)
+        sepLineView.mas_makeConstraints { (make) in
+            let _ = make?.left.equalTo()(0)
+            let _ = make?.right.equalTo()(0)
+            let _ = make?.height.equalTo()(0)
+            let _ = make?.bottom.equalTo()(0)
+        }
+        
         
         segmentedControl = HMSegmentedControl(sectionTitles: ["全部","待付款","待发货","待收货","已完成","已关闭","退款订单"])
         segmentedControl.autoresizingMask = UIViewAutoresizing.flexibleWidth
@@ -155,7 +197,7 @@ final class HomeView: UserInterface {
             let _ = make?.left.equalTo()(0)
             let _ = make?.height.equalTo()(35)
             let _ = make?.right.equalTo()(0)
-            let _ = make?.top.equalTo()(placeholdView.mas_bottom)
+            let _ = make?.top.equalTo()(self.noNetworkView!.mas_bottom)
         }
         
         segmentedControl.indexChangeBlock = {
@@ -352,6 +394,26 @@ extension HomeView: HomeViewInterface {
                                          shipping_id: expressId)
         }
     }
+    
+    func showNoNetWorkErrorView() {
+        self.noNetworkView!.mas_updateConstraints { (make) in
+           let _ = make?.top.equalTo()(64)
+        }
+        
+        UIView.animate(withDuration: 0.3, animations: {
+            self.view.layoutIfNeeded()
+        })
+    }
+    
+    func hideNoNetWorkErrorView() {
+        self.noNetworkView!.mas_updateConstraints { (make) in
+            let _ = make?.top.equalTo()(29)
+        }
+        
+        UIView.animate(withDuration: 0.3, animations: {
+            self.view.layoutIfNeeded()
+        })
+    }
 }
 
 // MARK: - VIPER COMPONENTS API (Auto-generated code)
@@ -418,6 +480,7 @@ extension HomeView : UITableViewDataSource , UITableViewDelegate {
             let tmpCell = tableView.dequeueReusableCell(withIdentifier: OrderActionTableViewCell.className,
                                                         for: indexPath) as! OrderActionTableViewCell
             tmpCell.indexPath = indexPath
+            tmpCell.fd_enforceFrameLayout = true
             
             tmpCell.buttonActionCallback = {
                 [weak self] (indexPath,title) in
@@ -452,6 +515,7 @@ extension HomeView : UITableViewDataSource , UITableViewDelegate {
                                                         for: indexPath) as! SKUItemTableViewCell
             
             tmpCell.skuItemEntity = skuItemEntity
+            tmpCell.fd_enforceFrameLayout = true
             
             cell = tmpCell
         }
@@ -462,13 +526,18 @@ extension HomeView : UITableViewDataSource , UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        //let orderListItem = self.presenter.orderList[indexPath.section]
         if indexPath.row == 0 {
+            
             return 38
         }
         else if indexPath.row == self.getTotalRowBySection(section: indexPath.section) - 1 {
+            
             return 49
         }
         else if indexPath.row == self.getTotalRowBySection(section: indexPath.section) - 2 {
+           
             return 101
         }
         return 113

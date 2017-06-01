@@ -219,5 +219,9 @@ class OrderActionTableViewCell: UITableViewCell {
         }
         callBack(self.indexPath, sender.title(for: UIControlState()))
     }
+    
+    override func sizeThatFits(_ size: CGSize) -> CGSize {
+        return CGSize(width: size.width, height: 49)
+    }
 
 }

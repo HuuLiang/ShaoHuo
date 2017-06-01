@@ -75,7 +75,7 @@ final class OrderDetailPresenter: Presenter {
                     _view.hidHUDView()
                 }
                 else {
-                    _view.showErrorHUDView(errorString: message)
+                    _view.showErrorHUDView(errorString: message, code: code)
                 }
             }
         }
@@ -103,7 +103,7 @@ final class OrderDetailPresenter: Presenter {
                     _view.hidHUDView()
                 }
                 else {
-                    _view.showErrorHUDView(errorString: message)
+                    _view.showErrorHUDView(errorString: message, code: code)
                 }
             }
         }
@@ -128,7 +128,7 @@ final class OrderDetailPresenter: Presenter {
                     _view.hidHUDView()
                 }
                 else {
-                    _view.showErrorHUDView(errorString: message)
+                    _view.showErrorHUDView(errorString: message, code: code)
                 }
             }
         }
@@ -153,7 +153,7 @@ final class OrderDetailPresenter: Presenter {
                     
                 }
                 else {
-                    _view.showErrorHUDView(errorString: message)
+                    _view.showErrorHUDView(errorString: message, code: code)
                 }
             }
         }

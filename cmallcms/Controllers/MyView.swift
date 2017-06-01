@@ -100,7 +100,7 @@ final class MyView: UserInterface {
         }
         
         headerImageView = UIImageView()
-        headerImageView?.backgroundColor = UIColor.blue
+        //headerImageView?.backgroundColor = UIColor.blue
         headView.addSubview(headerImageView!)
         headerImageView!.mas_makeConstraints { (make) in
             let _ = make?.left.equalTo()(16)

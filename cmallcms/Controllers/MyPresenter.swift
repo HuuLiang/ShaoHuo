@@ -31,7 +31,7 @@ final class MyPresenter: Presenter {
                     _view.hidHUDView()
                 }
                 else {
-                    _view.showErrorHUDView(errorString: message)
+                    _view.showErrorHUDView(errorString: message, code: code)
                 }
             }
         }

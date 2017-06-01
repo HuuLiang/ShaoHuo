@@ -30,7 +30,7 @@ class OrderListModel: NSObject {
             
             let responseDic = try? JSONSerialization.jsonObject(with: responseData as! Data,
                                                                 options: .allowFragments)
-            log.info("orderList responseDic: \(responseDic)")
+            //log.info("orderList responseDic: \(responseDic)")
             //log.info("orderList url string" + (sessionTask.currentRequest?.url?.absoluteString ?? ""))
             if responseDic == nil {
                 complete(nil, CMCError.jsonSerializedFailed)

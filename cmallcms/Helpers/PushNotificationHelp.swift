@@ -10,7 +10,7 @@ import UIKit
 
 struct PushNotificationHelp {
 
-    static func didReceiveRemoteNotification(userInfo: [AnyHashable : Any]) -> Void {
+    static func didReceiveRemoteNotification(userInfo: [AnyHashable : Any], needShowOrderDetailView: Bool = false) -> Void {
         
         if UserTicketModel.sharedInstance.isLogin == false {
             return
@@ -23,29 +23,34 @@ struct PushNotificationHelp {
             log.info("title: \(title)")
         }
         
-        let badge = aps?["badge"] as? Int
+        var badge = aps?["badge"] as? Int
         log.info("badge: \(String(describing: badge ?? 0))")
         
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let rootViewController = appDelegate.window?.rootViewController as? UITabBarController
         
-        let homeTabbarItem: UITabBarItem? = rootViewController?.tabBar.items?[0]
         let messageTabBarItem: UITabBarItem? =  rootViewController?.tabBar.items?[1]
         
-        
-//        if let badgeValue = homeTabbarItem?.badgeValue?.toInt() {
-//            homeTabbarItem?.badgeValue = "\(badgeValue + (badge ?? 0))"
-//        }
-//        else {
-//            homeTabbarItem?.badgeValue = "\(String(describing: badge ?? 0))"
-//        }
+        if badge == nil {
+            badge = 1
+        }
         
         if let badgeValue = messageTabBarItem?.badgeValue?.toInt() {
             messageTabBarItem?.badgeValue = "\(badgeValue + (badge ?? 0))"
         }
         else {
             messageTabBarItem?.badgeValue = "\(String(describing: badge ?? 0))"
+        }
+        
+        if needShowOrderDetailView {
+            if let order_id = dicData?["order_id"] {
+                if let navigationController: UINavigationController = rootViewController?.viewControllers?[0] as? UINavigationController {
+                    
+                    let detailModel = Module.build("OrderDetail")
+                    detailModel.router.showDetail(from: navigationController, setupData: order_id)
+                }
+            }
         }
     }
     

@@ -62,9 +62,6 @@ final class MessageView: UserInterface {
             //self?.getOrderList(status: self?.segmentedControl.selectedSegmentIndex ?? 0)
             self?.getMessageList(reload: false)
         })
-        
-        
-
     }
     
     func getMessageList(reload: Bool) {
@@ -140,8 +137,9 @@ extension MessageView: UITableViewDataSource, UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
         
         let msgItem = self.presenter.messageList[indexPath.row]
-        self.presenter.readMessage(index: indexPath.row)
-        
+        if msgItem.read_status == 1 {
+            self.presenter.readMessage(index: indexPath.row)
+        }
         if let order_id = msgItem.order_id {
             let orderDetailModel = Module.build("OrderDetail")
             orderDetailModel.view.hidesBottomBarWhenPushed = true

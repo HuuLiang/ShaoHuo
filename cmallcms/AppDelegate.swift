@@ -32,7 +32,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         
         if let notificaton = launchOptions?[UIApplicationLaunchOptionsKey.remoteNotification] {
-            PushNotificationHelp.didReceiveRemoteNotification(userInfo: notificaton as! [AnyHashable : Any])
+            PushNotificationHelp.didReceiveRemoteNotification(userInfo: notificaton as! [AnyHashable : Any], needShowOrderDetailView: true)
+            //应用处于后台时的远程推送接受
+            UMessage.didReceiveRemoteNotification(notificaton as? [AnyHashable : Any])
         }
         
         return true
@@ -157,6 +159,16 @@ extension AppDelegate {
     
     /// 显示tabbar
     func showTabbarViewController() {
+        
+        UITabBarItem.appearance().setTitleTextAttributes([
+            NSForegroundColorAttributeName: CMCColor.normalButtonBackgroundColor,
+            NSFontAttributeName: UIFont.systemFont(ofSize: 12)
+            ], for: UIControlState.normal)
+        
+        UITabBarItem.appearance().setTitleTextAttributes([
+            NSForegroundColorAttributeName: CMCColor.hlightedButtonBackgroundColor,
+            NSFontAttributeName: UIFont.systemFont(ofSize: 12)
+            ], for: UIControlState.highlighted)
         
         let homeModule = Module.build("Home")
         homeModule.view.title = "订单"

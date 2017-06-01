@@ -40,22 +40,18 @@ final class HomePresenter: Presenter {
             switch status {
             case .unknown:
                 log.warning("NetworkReachabilityStatus.Unknown")
+                self?.view.showNoNetWorkErrorView()
                 break
             case .notReachable:
                 log.warning("NetworkReachabilityStatus.NotReachable")
-            
-                let alert = UIAlertController(title: "提示", message: "似乎已断开与互联网的连接!", preferredStyle: UIAlertControllerStyle.alert)
-                alert.addAction(UIAlertAction(title: "确定", style: UIAlertActionStyle.default, handler: {
-                    (tmpAlert) in
-                    alert.dismiss(animated: true, completion: nil)
-                }))
-                alert.show((self?._view)!, sender: nil)
-                
+                self?.view.showNoNetWorkErrorView()
                 break
             case .reachableViaWWAN:
                 log.info("3G")
+                self?.view.hideNoNetWorkErrorView()
             case .reachableViaWiFi:
                 log.info("wifi")
+                self?.view.hideNoNetWorkErrorView()
             }
         }
         
@@ -115,7 +111,7 @@ final class HomePresenter: Presenter {
                     _view.hidHUDView()
                 }
                 else {
-                    _view.showErrorHUDView(errorString: message)
+                    _view.showErrorHUDView(errorString: message, code: code)
                 }
             }
             
@@ -142,8 +138,6 @@ final class HomePresenter: Presenter {
                 
                 view.finishedLoad()
             }
-            
-            log.info("responseOrderList result :\(result)")
         }
     }
     
@@ -161,7 +155,7 @@ final class HomePresenter: Presenter {
                     _view.hidHUDView()
                 }
                 else {
-                    _view.showErrorHUDView(errorString: message)
+                    _view.showErrorHUDView(errorString: message, code: code)
                 }
             }
         }
@@ -189,7 +183,7 @@ final class HomePresenter: Presenter {
                     _view.hidHUDView()
                 }
                 else {
-                    _view.showErrorHUDView(errorString: message)
+                    _view.showErrorHUDView(errorString: message, code: code)
                 }
             }
         }
@@ -215,7 +209,7 @@ final class HomePresenter: Presenter {
                     
                 }
                 else {
-                    _view.showErrorHUDView(errorString: message)
+                    _view.showErrorHUDView(errorString: message, code: code)
                 }
             }
         }

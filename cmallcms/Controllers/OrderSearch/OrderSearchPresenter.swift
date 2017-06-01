@@ -86,7 +86,7 @@ final class OrderSearchPresenter: Presenter {
                     _view.hidHUDView()
                 }
                 else {
-                    _view.showErrorHUDView(errorString: message)
+                    _view.showErrorHUDView(errorString: message, code: code)
                 }
             }
             
@@ -131,7 +131,7 @@ final class OrderSearchPresenter: Presenter {
                     _view.hidHUDView()
                 }
                 else {
-                    _view.showErrorHUDView(errorString: message)
+                    _view.showErrorHUDView(errorString: message, code: code)
                 }
             }
         }
@@ -159,7 +159,7 @@ final class OrderSearchPresenter: Presenter {
                     _view.hidHUDView()
                 }
                 else {
-                    _view.showErrorHUDView(errorString: message)
+                    _view.showErrorHUDView(errorString: message, code: code)
                 }
             }
         }
@@ -185,7 +185,7 @@ final class OrderSearchPresenter: Presenter {
                     
                 }
                 else {
-                    _view.showErrorHUDView(errorString: message)
+                    _view.showErrorHUDView(errorString: message, code: code)
                 }
             }
         }

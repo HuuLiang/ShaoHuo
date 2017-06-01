@@ -64,7 +64,7 @@ final class RefundOrderDetailPresenter: Presenter {
                     _view.hidHUDView()
                 }
                 else {
-                    _view.showErrorHUDView(errorString: message)
+                    _view.showErrorHUDView(errorString: message, code: code)
                 }
             }
         }
@@ -93,7 +93,7 @@ final class RefundOrderDetailPresenter: Presenter {
                     _view.hidHUDView()
                 }
                 else {
-                    _view.showErrorHUDView(errorString: message)
+                    _view.showErrorHUDView(errorString: message, code: code)
                 }
             }
         }

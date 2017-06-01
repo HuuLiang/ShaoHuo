@@ -30,7 +30,6 @@ extension UIViewController {
                                           handler: { (alertAction) in
                        
                                             UserTicketModel.sharedInstance.logout()
-
                                             let appledate = UIApplication.shared.delegate as! AppDelegate
                                             appledate.showLoginViewController()
                                             

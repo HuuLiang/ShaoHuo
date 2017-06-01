@@ -39,4 +39,8 @@ class SKUItemTableViewCell: UITableViewCell {
             self.priceLabel.text = String(format: "￥%.2f", totalAmount)
         }
     }
+    
+    override func sizeThatFits(_ size: CGSize) -> CGSize {
+        return CGSize(width: size.width, height: 113)
+    }
 }

@@ -58,7 +58,7 @@ final class MessagePresenter: Presenter {
                     _view.hidHUDView()
                 }
                 else {
-                    _view.showErrorHUDView(errorString: message)
+                    _view.showErrorHUDView(errorString: message, code: code)
                 }
             }
         }
@@ -93,11 +93,12 @@ final class MessagePresenter: Presenter {
                     _view.hidHUDView()
                 }
                 else {
-                    _view.showErrorHUDView(errorString: message)
+                   _view.showErrorHUDView(errorString: message, code: code)
                 }
             }
         }
         else {
+            decreaseBadgeValue()
             view.finishedLoad()
         }
     }
@@ -112,12 +113,26 @@ final class MessagePresenter: Presenter {
                     _view.hidHUDView()
                 }
                 else {
-                    _view.showErrorHUDView(errorString: message)
+                    _view.showErrorHUDView(errorString: message, code: code)
                 }
             }
         }
         else {
+            decreaseBadgeValue()
             view.finishedLoad()
+        }
+    }
+    
+    func decreaseBadgeValue() {
+        
+        if let badgeValue = _view.tabBarItem.badgeValue?.toInt() {
+            let tmpBadgeValue = badgeValue - 1
+            if tmpBadgeValue > 0 {
+                _view.tabBarItem.badgeValue = "\(tmpBadgeValue)"
+            }
+            else {
+                _view.tabBarItem.badgeValue = nil
+            }
         }
     }
 }
