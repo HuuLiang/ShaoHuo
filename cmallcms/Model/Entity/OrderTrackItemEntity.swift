@@ -9,7 +9,7 @@
 import UIKit
 import ObjectMapper
 
-struct OrderTrackItemEntity : Mappable {
+class OrderTrackItemEntity : Mappable {
     
     var oa_id: String?
     // 订单id
@@ -23,11 +23,11 @@ struct OrderTrackItemEntity : Mappable {
     // 操作时间文字表述，如:发货时间
     var time_text: String?
     
-    public init?(map: Map) {
+    required init?(map: Map) {
         
     }
     
-    mutating public func mapping(map: Map)  {
+    func mapping(map: Map)  {
         
         oa_id <- map["oa_id"]
         o_id <- map["o_id"]

@@ -16,6 +16,7 @@ final class RefundOrderDetailInteractor: Interactor {
         let params = [
             "ad_uid": UserTicketModel.sharedInstance.uid ?? "",
             "token": UserTicketModel.sharedInstance.token ?? "",
+            "shop_id": UserTicketModel.sharedInstance.shop_id ?? "",
             "order_id": orderId
         ]
         
@@ -37,6 +38,7 @@ final class RefundOrderDetailInteractor: Interactor {
             "ad_uid": UserTicketModel.sharedInstance.uid ?? "",
             "token": UserTicketModel.sharedInstance.token ?? "",
             "order_id": order_id,
+            "shop_id": UserTicketModel.sharedInstance.shop_id ?? "",
             "rl_id": rl_id,
             "status": status,
             "refuse_reason": refuse_reason

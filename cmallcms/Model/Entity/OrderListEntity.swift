@@ -9,7 +9,7 @@
 import UIKit
 import ObjectMapper
 
-struct OrderListEntity: Mappable {
+class OrderListEntity: Mappable {
     //订单id
     var order_id: String?
     var shop_id: String?
@@ -25,8 +25,13 @@ struct OrderListEntity: Mappable {
     var amout:Double?
     // 1：捎货物流，2：其它物流，3：自提
     var shipping_type:Int?
+    
+    var shipping_id: String?
     // 物流费用
-    var shipping_fee:Double?
+    var shipping_fee: Double?
+    
+    /// 优惠金额
+    var bonus_amount: Double?
     // 自提点名称
     var self_shipping_name: String?
     // 自提点详细地址
@@ -73,11 +78,13 @@ struct OrderListEntity: Mappable {
     // 订单商品详情
     var sub_list: [SKUItemEntity] = []
     
-    public init?(map: Map) {
+    var qr_url: String?
     
+    required init?(map: Map) {
+        
     }
     
-    mutating public func mapping(map: Map)  {
+    func mapping(map: Map)  {
         
         //订单id
         order_id <- map["order_id"]
@@ -86,8 +93,12 @@ struct OrderListEntity: Mappable {
         uid <- map["uid"]
         // 订单号
         order_sn <- map["order_sn"]
+        
         nums <- (map["nums"], intTransform)
+        
         amout <- (map["amout"], doubleTransform)
+        
+        bonus_amount <- (map["bonus_amount"], doubleTransform)
         // 1：捎货物流，2：其它物流，3：自提
         shipping_type <- (map["shipping_type"], intTransform)
         shipping_fee <- (map["shipping_fee"], doubleTransform)
@@ -138,6 +149,11 @@ struct OrderListEntity: Mappable {
         sub_list <- map["sub_list"]
         // 下单人姓名
         username <- map["username"]
+        
+        shipping_id <- map["shipping_id"]
+        //shipping_id
+        
+        qr_url <- map["qr_url"]
     }
 }
 

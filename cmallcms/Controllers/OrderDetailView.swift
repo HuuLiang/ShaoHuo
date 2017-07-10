@@ -29,15 +29,43 @@ final class OrderDetailView: UserInterface {
         //self.navigationController?.view.backgroundColor = CMCColor.loginViewBackgroundColor
         self.view.backgroundColor = CMCColor.loginViewBackgroundColor
         self.configTableView()
+    
+    }
+    
+    
+    func rightBarButtonPressed() {
+        
+        if GPrintHelp.shared.isConnecting {
+            self.presenter.addReciptPrintCount()
+            GPrintHelp.shared.printReceipt(orderDetail: self.presenter.orderEntity!.order!)
+            
+            //self.presenter.orderEntity?.order?.print_count += 1
+            
+            self.presenter.orderEntity!.order!.print_count! += 1
+            
+            self.showPrintButton()
+        }
+        else {
+            let alert = UIAlertController(title: "提示",
+                                          message: "打印机连接失败，请打开手机蓝牙，然后在 \"我的->打印机设置\" 中连接打印设备",
+                                          preferredStyle: UIAlertControllerStyle.alert)
+            
+            alert.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: "确定", style: UIAlertActionStyle.default, handler: { (alertController) in
+                
+            }))
+            
+            self.navigationController?.presentVC(alert)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if self.presenter.orderEntity == nil {
+        //if self.presenter.orderEntity == nil {
             //self.tableView?.mj_header.beginRefreshing()
-            self.getOrderDetail()
-        }
+        self.getOrderDetail()
+        //}
     }
     
     func configTableView() {
@@ -164,6 +192,20 @@ final class OrderDetailView: UserInterface {
             self.showPhonePickView(phoneNumber)
         }
     }
+    
+    /// 显示打印小票按钮
+    func showPrintButton() {
+        
+        if self.presenter.orderEntity?.order?.status == ORDER_STATUS_DELIVERED
+            || self.presenter.orderEntity?.order?.status == ORDER_STATUS_SUCCESS {
+            
+            let print_count = self.presenter.orderEntity?.order?.print_count ?? 0
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "打印(\(print_count))",
+                style: UIBarButtonItemStyle.plain,
+                target: self,
+                action: #selector(OrderDetailView.rightBarButtonPressed))
+        }
+    }
 }
 
 //MARK: - Public interface
@@ -172,26 +214,33 @@ extension OrderDetailView: OrderDetailViewInterface {
     func finishedLoadOrderInfo() {
         self.tableView?.mj_header.endRefreshing()
         self.tableView?.reloadData()
+        
+        self.showPrintButton()
     }
     
     func showOrderShippingList() {
     
         let shippingList = self.presenter.shippingList
         
+        if shippingList.count <= 0 {
+            return
+        }
+        
         let deliverOrderController = DeliveryOrderViewController(nibName: "DeliveryOrderViewController", bundle: nil)
         deliverOrderController.title = "选择配送方式"
         deliverOrderController.hidesBottomBarWhenPushed = true
         deliverOrderController.shippingList = shippingList
+        deliverOrderController.orderId = self.presenter.orderId
         self.navigationController?.pushViewController(deliverOrderController, animated: true)
         
-        deliverOrderController.selectedShippingTypeCallback = {
-            [weak self] (shippingType, expressName, expressId) in
-            log.info("shippingType: \(shippingType) expressName:\(expressName) expressId:\(expressId)")
-            //shipping_type: Int, express_name: String, shipping_id: String
-            self?.presenter.deliveryOrder(shipping_type: shippingType,
-                                          express_name: expressName,
-                                          shipping_id: expressId)
-        }
+//        deliverOrderController.selectedShippingTypeCallback = {
+//            [weak self] (shippingType, expressName, expressId) in
+//            log.info("shippingType: \(shippingType) expressName:\(expressName) expressId:\(expressId)")
+//            //shipping_type: Int, express_name: String, shipping_id: String
+//            self?.presenter.deliveryOrder(shipping_type: shippingType,
+//                                          express_name: expressName,
+//                                          shipping_id: expressId)
+//        }
 
     }
 }
@@ -243,7 +292,7 @@ private extension OrderDetailView {
         tmpCell.orderSNLabel.textAlignment = NSTextAlignment.right
         
         tmpCell.receiveAddressTitleLabel.text = "合计："
-        tmpCell.receiveAddressLabel.text = String(format: "￥%.2f", amount*0.01)
+        tmpCell.receiveAddressLabel.text = String(format: "￥%.2f", (amount+shipping_fee-bonus_amount)*0.01)
         tmpCell.receiveAddressLabel.textAlignment = NSTextAlignment.right
         tmpCell.receiveAddressLabel.textColor = CMCColor.hlightedButtonBackgroundColor
         
@@ -472,6 +521,7 @@ extension OrderDetailView : UITableViewDataSource, UITableViewDelegate {
                 let sub_item = sub_list![indexPath.row-1]
                 let goods_id = sub_item.goods_id ?? ""
                 let webController: WebViewController  = WebViewController(url: URL(string: "\(CMallHTML5HostUrlString)index/details?goods_id=\(goods_id)")!)
+                webController.displaysWebViewTitle = true
                 self.navigationController?.show(webController, sender: nil)
             }
         }

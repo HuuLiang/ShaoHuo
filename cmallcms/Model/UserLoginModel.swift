@@ -122,4 +122,32 @@ class UserLoginModel: NSObject {
             complete(nil, CMCError.converResponseError(error: error as NSError))
         }
     }
+    
+    /// 获取店铺列表
+    ///
+    /// - Parameters:
+    ///   - params:
+    ///   - complete:
+    /// - Returns:
+    func userShopLists(_ params: [String: String], complete: @escaping (_ result:[String : AnyObject]?, _ error: CMCError?) -> Void) -> URLSessionDataTask? {
+        let versionParams = NSMutableDictionary(dictionary: params).buildVersionParams()
+        log.info("userShopLists versionParams: \(versionParams)")
+        
+        return CMCRequestManager.sharedClient().post("user/shopLists", parameters: versionParams, progress: nil, success: { (sessionTask, responseData) in
+            
+            let responseDic = try? JSONSerialization.jsonObject(with: responseData as! Data,
+                                                                options: .allowFragments)
+            log.info("userShopLists responseDic: \(responseDic)")
+            //log.info("orderList url string" + (sessionTask.currentRequest?.url?.absoluteString ?? ""))
+            if responseDic == nil {
+                complete(nil, CMCError.jsonSerializedFailed)
+            }
+            else {
+                let (result, error) = ConverNetworkResponse(responseData: responseDic as! [String : AnyObject])
+                complete(result, error)
+            }
+        }) { (sessionData, error) in
+            complete(nil, CMCError.converResponseError(error: error as NSError))
+        }
+    }
 }

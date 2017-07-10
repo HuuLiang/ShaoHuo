@@ -101,13 +101,13 @@ class RefundInfoTableViewCell: UITableViewCell {
         self.imageList = []
         
         if let proof_img1 = refundEntity.proof_img1 , proof_img1.length > 0 {
-            imageList.append(proof_img1)
+            imageList.append(proof_img1.replacingOccurrences(of: "http://", with: "https://"))
         }
         if let proof_img2 = refundEntity.proof_img2 , proof_img2.length > 0 {
-            imageList.append(proof_img2)
+            imageList.append(proof_img2.replacingOccurrences(of: "http://", with: "https://"))
         }
         if let proof_img3 = refundEntity.proof_img3 , proof_img3.length > 0 {
-            imageList.append(proof_img3)
+            imageList.append(proof_img3.replacingOccurrences(of: "http://", with: "https://"))
         }
         
         if imageList.count <= 0 {

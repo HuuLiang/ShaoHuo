@@ -9,7 +9,7 @@
 import UIKit
 import ObjectMapper
 
-struct OrderRefundEntity : Mappable {
+class OrderRefundEntity : Mappable {
     // 退款单id
     var rl_id: String?
     // 退款单号
@@ -55,11 +55,11 @@ struct OrderRefundEntity : Mappable {
     // 退款原因文字表述
     var refund_reason_text: String?
 
-    public init?(map: Map) {
+    required init?(map: Map) {
         
     }
     
-    mutating public func mapping(map: Map)  {
+    func mapping(map: Map)  {
         // 退款单id
         rl_id <- map["rl_id"]
         // 退款单号

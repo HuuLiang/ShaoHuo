@@ -84,6 +84,9 @@
 		FB441E4E1ED2F47600A4A8DD /* OrderListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB441E4D1ED2F47600A4A8DD /* OrderListEntity.swift */; };
 		FB441E501ED2F4CB00A4A8DD /* SKUItemEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB441E4F1ED2F4CB00A4A8DD /* SKUItemEntity.swift */; };
 		FB441E521ED2F5A500A4A8DD /* ModelEnityTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB441E511ED2F5A500A4A8DD /* ModelEnityTransform.swift */; };
+		FB5B20021EFCB19B006B73CE /* libGSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5B20011EFCB19B006B73CE /* libGSDK.a */; };
+		FB5B20051EFCBEF1006B73CE /* GPrintConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5B20041EFCBEF1006B73CE /* GPrintConnectViewController.swift */; };
+		FB5B20081EFCC53F006B73CE /* ShopInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5B20071EFCC53F006B73CE /* ShopInfoViewController.swift */; };
 		FB799FBC1ED6AF3F0092B5DF /* RefundOrderDetailDisplayData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB799FB71ED6AF3F0092B5DF /* RefundOrderDetailDisplayData.swift */; };
 		FB799FBD1ED6AF3F0092B5DF /* RefundOrderDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB799FB81ED6AF3F0092B5DF /* RefundOrderDetailInteractor.swift */; };
 		FB799FBE1ED6AF3F0092B5DF /* RefundOrderDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB799FB91ED6AF3F0092B5DF /* RefundOrderDetailPresenter.swift */; };
@@ -100,6 +103,7 @@
 		FB9F57D41ECE96FC00DC2F45 /* UserTicketModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9F57D31ECE96FC00DC2F45 /* UserTicketModel.swift */; };
 		FB9F57D81ECEA78B00DC2F45 /* libUMessage_Sdk_1.5.0a.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FB9F57D61ECEA78B00DC2F45 /* libUMessage_Sdk_1.5.0a.a */; };
 		FB9F57DA1ECEA7D600DC2F45 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB9F57D91ECEA7D600DC2F45 /* UserNotifications.framework */; };
+		FBA6CA8F1F00A92200EC6FEF /* GPrintHelp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA6CA8E1F00A92200EC6FEF /* GPrintHelp.swift */; };
 		FBB537441EDE66570003682D /* 4_1.png in Resources */ = {isa = PBXBuildFile; fileRef = FBB537341EDE66570003682D /* 4_1.png */; };
 		FBB537451EDE66570003682D /* 4_2.png in Resources */ = {isa = PBXBuildFile; fileRef = FBB537351EDE66570003682D /* 4_2.png */; };
 		FBB537461EDE66570003682D /* 4_3.png in Resources */ = {isa = PBXBuildFile; fileRef = FBB537361EDE66570003682D /* 4_3.png */; };
@@ -117,6 +121,9 @@
 		FBB537521EDE66570003682D /* 6p_3.png in Resources */ = {isa = PBXBuildFile; fileRef = FBB537421EDE66570003682D /* 6p_3.png */; };
 		FBB537531EDE66570003682D /* 6p_4.png in Resources */ = {isa = PBXBuildFile; fileRef = FBB537431EDE66570003682D /* 6p_4.png */; };
 		FBB537561EDE67900003682D /* GuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB537551EDE67900003682D /* GuideViewController.swift */; };
+		FBB6372E1F03449F00F56935 /* UIImage+GPrint.m in Sources */ = {isa = PBXBuildFile; fileRef = FBB6372D1F03449F00F56935 /* UIImage+GPrint.m */; };
+		FBB637331F035CC900F56935 /* ShopInfoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB637321F035CC900F56935 /* ShopInfoEntity.swift */; };
+		FBB637361F03952200F56935 /* ShopListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB637351F03952200F56935 /* ShopListViewController.swift */; };
 		FBF1CA051ECC1F1A000751DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF1CA041ECC1F1A000751DF /* AppDelegate.swift */; };
 		FBF1CA0E1ECC1F1A000751DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBF1CA0D1ECC1F1A000751DF /* Assets.xcassets */; };
 		FBF1CA111ECC1F1A000751DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBF1CA0F1ECC1F1A000751DF /* LaunchScreen.storyboard */; };
@@ -216,6 +223,18 @@
 		FB441E4D1ED2F47600A4A8DD /* OrderListEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderListEntity.swift; sourceTree = "<group>"; };
 		FB441E4F1ED2F4CB00A4A8DD /* SKUItemEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKUItemEntity.swift; sourceTree = "<group>"; };
 		FB441E511ED2F5A500A4A8DD /* ModelEnityTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelEnityTransform.swift; sourceTree = "<group>"; };
+		FB5B1FF81EFCB19B006B73CE /* BLKWrite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLKWrite.h; sourceTree = "<group>"; };
+		FB5B1FF91EFCB19B006B73CE /* BluetoothDeviceHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BluetoothDeviceHeader.h; sourceTree = "<group>"; };
+		FB5B1FFA1EFCB19B006B73CE /* CBController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBController.h; sourceTree = "<group>"; };
+		FB5B1FFB1EFCB19B006B73CE /* DeviceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceInfo.h; sourceTree = "<group>"; };
+		FB5B1FFC1EFCB19B006B73CE /* EscCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EscCommand.h; sourceTree = "<group>"; };
+		FB5B1FFD1EFCB19B006B73CE /* MyPeripheral.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPeripheral.h; sourceTree = "<group>"; };
+		FB5B1FFE1EFCB19B006B73CE /* ReliableBurstData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReliableBurstData.h; sourceTree = "<group>"; };
+		FB5B1FFF1EFCB19B006B73CE /* SerialGATT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SerialGATT.h; sourceTree = "<group>"; };
+		FB5B20001EFCB19B006B73CE /* TscCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TscCommand.h; sourceTree = "<group>"; };
+		FB5B20011EFCB19B006B73CE /* libGSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGSDK.a; sourceTree = "<group>"; };
+		FB5B20041EFCBEF1006B73CE /* GPrintConnectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GPrintConnectViewController.swift; sourceTree = "<group>"; };
+		FB5B20071EFCC53F006B73CE /* ShopInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopInfoViewController.swift; sourceTree = "<group>"; };
 		FB799FB71ED6AF3F0092B5DF /* RefundOrderDetailDisplayData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefundOrderDetailDisplayData.swift; sourceTree = "<group>"; };
 		FB799FB81ED6AF3F0092B5DF /* RefundOrderDetailInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefundOrderDetailInteractor.swift; sourceTree = "<group>"; };
 		FB799FB91ED6AF3F0092B5DF /* RefundOrderDetailPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefundOrderDetailPresenter.swift; sourceTree = "<group>"; };
@@ -238,6 +257,7 @@
 		FB9F57D71ECEA78B00DC2F45 /* UMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMessage.h; sourceTree = "<group>"; };
 		FB9F57D91ECEA7D600DC2F45 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		FB9F57DB1ECEA92800DC2F45 /* cmallcms.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = cmallcms.entitlements; sourceTree = "<group>"; };
+		FBA6CA8E1F00A92200EC6FEF /* GPrintHelp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GPrintHelp.swift; sourceTree = "<group>"; };
 		FBB537341EDE66570003682D /* 4_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4_1.png; sourceTree = "<group>"; };
 		FBB537351EDE66570003682D /* 4_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4_2.png; sourceTree = "<group>"; };
 		FBB537361EDE66570003682D /* 4_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4_3.png; sourceTree = "<group>"; };
@@ -255,6 +275,10 @@
 		FBB537421EDE66570003682D /* 6p_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 6p_3.png; sourceTree = "<group>"; };
 		FBB537431EDE66570003682D /* 6p_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 6p_4.png; sourceTree = "<group>"; };
 		FBB537551EDE67900003682D /* GuideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuideViewController.swift; sourceTree = "<group>"; };
+		FBB6372C1F03449F00F56935 /* UIImage+GPrint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+GPrint.h"; sourceTree = "<group>"; };
+		FBB6372D1F03449F00F56935 /* UIImage+GPrint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+GPrint.m"; sourceTree = "<group>"; };
+		FBB637321F035CC900F56935 /* ShopInfoEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopInfoEntity.swift; sourceTree = "<group>"; };
+		FBB637351F03952200F56935 /* ShopListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopListViewController.swift; sourceTree = "<group>"; };
 		FBF1CA011ECC1F1A000751DF /* cmallcms.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cmallcms.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBF1CA041ECC1F1A000751DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FBF1CA0D1ECC1F1A000751DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -276,6 +300,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB5B20021EFCB19B006B73CE /* libGSDK.a in Frameworks */,
 				FB9F57DA1ECEA7D600DC2F45 /* UserNotifications.framework in Frameworks */,
 				76949568264F8C6BFC8CDFE6 /* Pods_cmallcms.framework in Frameworks */,
 				FB9F57D81ECEA78B00DC2F45 /* libUMessage_Sdk_1.5.0a.a in Frameworks */,
@@ -331,6 +356,7 @@
 				FB431F1C1ECFF451006026EB /* AppearanceConfigurator.swift */,
 				FB431F4A1ED031DA006026EB /* CMCActionButton.swift */,
 				FBF90AFA1ED95F9A000913A1 /* PushNotificationHelp.swift */,
+				FBA6CA8E1F00A92200EC6FEF /* GPrintHelp.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -348,6 +374,7 @@
 		FB0D49FF1ECD52B60091B6F1 /* Vender */ = {
 			isa = PBXGroup;
 			children = (
+				FB5B1FF61EFCB167006B73CE /* GprinterSDK */,
 				FB799FC51ED6EBF00092B5DF /* FDUITableViewLayout */,
 				FB2BDBD91ED545950094CBB8 /* StaticTableView */,
 				FB441E3B1ED2A86B00A4A8DD /* CNPPopupController */,
@@ -382,6 +409,8 @@
 				FB441E3F1ED2A8A700A4A8DD /* UIViewControllerExtensions.swift */,
 				FB441E461ED2D97500A4A8DD /* UserInterfaceExtensions.swift */,
 				B428CA571EDBD1FF009F0D20 /* UINavigationItemExtensions.swift */,
+				FBB6372C1F03449F00F56935 /* UIImage+GPrint.h */,
+				FBB6372D1F03449F00F56935 /* UIImage+GPrint.m */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -401,6 +430,7 @@
 		FB0D4A251ECD86010091B6F1 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				FBB637341F03944400F56935 /* ShopList */,
 				FBF90AFC1ED96E6F000913A1 /* OrderSearch */,
 				FB14D9111ED7CC3100168A78 /* DeliveryOrder */,
 				FB799FB61ED6AF0C0092B5DF /* RefundOrderDetail */,
@@ -425,6 +455,8 @@
 		FB0D4A311ECD86220091B6F1 /* My */ = {
 			isa = PBXGroup;
 			children = (
+				FB5B20061EFCC502006B73CE /* ShopInfo */,
+				FB5B20031EFCBCDF006B73CE /* GprintConnect */,
 				FB0D4A331ECD86390091B6F1 /* MyDisplayData.swift */,
 				FB0D4A341ECD86390091B6F1 /* MyInteractor.swift */,
 				FB0D4A351ECD86390091B6F1 /* MyPresenter.swift */,
@@ -553,8 +585,50 @@
 				FB14D90F1ED7B97500168A78 /* OrderRefundEntity.swift */,
 				FB114E231ED8360300E9569F /* CMCStaticCellEntity.swift */,
 				FBF90AF31ED92970000913A1 /* PushMessageEntity.swift */,
+				FBB637321F035CC900F56935 /* ShopInfoEntity.swift */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		FB5B1FF61EFCB167006B73CE /* GprinterSDK */ = {
+			isa = PBXGroup;
+			children = (
+				FB5B1FF71EFCB19B006B73CE /* include */,
+				FB5B20011EFCB19B006B73CE /* libGSDK.a */,
+			);
+			path = GprinterSDK;
+			sourceTree = "<group>";
+		};
+		FB5B1FF71EFCB19B006B73CE /* include */ = {
+			isa = PBXGroup;
+			children = (
+				FB5B1FF81EFCB19B006B73CE /* BLKWrite.h */,
+				FB5B1FF91EFCB19B006B73CE /* BluetoothDeviceHeader.h */,
+				FB5B1FFA1EFCB19B006B73CE /* CBController.h */,
+				FB5B1FFB1EFCB19B006B73CE /* DeviceInfo.h */,
+				FB5B1FFC1EFCB19B006B73CE /* EscCommand.h */,
+				FB5B1FFD1EFCB19B006B73CE /* MyPeripheral.h */,
+				FB5B1FFE1EFCB19B006B73CE /* ReliableBurstData.h */,
+				FB5B1FFF1EFCB19B006B73CE /* SerialGATT.h */,
+				FB5B20001EFCB19B006B73CE /* TscCommand.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		FB5B20031EFCBCDF006B73CE /* GprintConnect */ = {
+			isa = PBXGroup;
+			children = (
+				FB5B20041EFCBEF1006B73CE /* GPrintConnectViewController.swift */,
+			);
+			path = GprintConnect;
+			sourceTree = "<group>";
+		};
+		FB5B20061EFCC502006B73CE /* ShopInfo */ = {
+			isa = PBXGroup;
+			children = (
+				FB5B20071EFCC53F006B73CE /* ShopInfoViewController.swift */,
+			);
+			path = ShopInfo;
 			sourceTree = "<group>";
 		};
 		FB799FB61ED6AF0C0092B5DF /* RefundOrderDetail */ = {
@@ -636,6 +710,14 @@
 				FBB537431EDE66570003682D /* 6p_4.png */,
 			);
 			name = imgs;
+			sourceTree = "<group>";
+		};
+		FBB637341F03944400F56935 /* ShopList */ = {
+			isa = PBXGroup;
+			children = (
+				FBB637351F03952200F56935 /* ShopListViewController.swift */,
+			);
+			path = ShopList;
 			sourceTree = "<group>";
 		};
 		FBF1C9F81ECC1F18000751DF = {
@@ -723,6 +805,9 @@
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Manual;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.Push = {
 								enabled = 1;
 							};
@@ -859,6 +944,7 @@
 				FB441E521ED2F5A500A4A8DD /* ModelEnityTransform.swift in Sources */,
 				FB0D4A211ECD85FB0091B6F1 /* HomeInteractor.swift in Sources */,
 				FB431F491ED01C11006026EB /* UITextField+LimitLength.m in Sources */,
+				FBB6372E1F03449F00F56935 /* UIImage+GPrint.m in Sources */,
 				FB14D9141ED7CD3E00168A78 /* DeliveryOrderViewController.swift in Sources */,
 				FB0D4A471ECD864D0091B6F1 /* LoginRouter.swift in Sources */,
 				FB799FC21ED6D6870092B5DF /* MessageListModel.swift in Sources */,
@@ -866,13 +952,16 @@
 				FB0D4A481ECD864D0091B6F1 /* LoginView.swift in Sources */,
 				FB0D4A5C1ECD86DB0091B6F1 /* OrderDetailDisplayData.swift in Sources */,
 				FB3743101ED3C65200596896 /* OrderTrackItemEntity.swift in Sources */,
+				FB5B20051EFCBEF1006B73CE /* GPrintConnectViewController.swift in Sources */,
 				FB0D4A161ECD553B0091B6F1 /* CMCConfig.swift in Sources */,
 				FB0D4A231ECD85FB0091B6F1 /* HomeRouter.swift in Sources */,
 				FB0D4A5D1ECD86DB0091B6F1 /* OrderDetailInteractor.swift in Sources */,
 				FBF90B061ED96EA6000913A1 /* OrderSearchView.swift in Sources */,
 				FB0D4A0A1ECD536C0091B6F1 /* Interactor.swift in Sources */,
+				FB5B20081EFCC53F006B73CE /* ShopInfoViewController.swift in Sources */,
 				FB0D4A2D1ECD861D0091B6F1 /* MessageInteractor.swift in Sources */,
 				FB2BDBDD1ED546B00094CBB8 /* StaticTableViewSection.swift in Sources */,
+				FBB637331F035CC900F56935 /* ShopInfoEntity.swift in Sources */,
 				FB431F1B1ECFDA9E006026EB /* UIViewExtensions.swift in Sources */,
 				FB3743121ED3C76A00596896 /* OrderDetailEntity.swift in Sources */,
 				FB0D4A3C1ECD86390091B6F1 /* MyRouter.swift in Sources */,
@@ -880,6 +969,7 @@
 				FBF90B041ED96EA6000913A1 /* OrderSearchPresenter.swift in Sources */,
 				FB441E4B1ED2F3A400A4A8DD /* OrderListModel.swift in Sources */,
 				FB0D4A3A1ECD86390091B6F1 /* MyInteractor.swift in Sources */,
+				FBB637361F03952200F56935 /* ShopListViewController.swift in Sources */,
 				FB441E501ED2F4CB00A4A8DD /* SKUItemEntity.swift in Sources */,
 				FBF90AFB1ED95F9A000913A1 /* PushNotificationHelp.swift in Sources */,
 				FBF1CA051ECC1F1A000751DF /* AppDelegate.swift in Sources */,
@@ -902,6 +992,7 @@
 				FB2BDBE11ED5470A0094CBB8 /* StaticTableViewRow.swift in Sources */,
 				FB0D4A221ECD85FB0091B6F1 /* HomePresenter.swift in Sources */,
 				FB0D4A5E1ECD86DB0091B6F1 /* OrderDetailPresenter.swift in Sources */,
+				FBA6CA8F1F00A92200EC6FEF /* GPrintHelp.swift in Sources */,
 				FB799FC01ED6AF3F0092B5DF /* RefundOrderDetailView.swift in Sources */,
 				FB441E3E1ED2A86B00A4A8DD /* CNPPopupController.m in Sources */,
 				FB0D4A0E1ECD536C0091B6F1 /* UserInterface.swift in Sources */,
@@ -1054,6 +1145,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/cmallcms/Vender/UMessage_Sdk_1.5.0a",
+					"$(PROJECT_DIR)/cmallcms/Vender/GprinterSDK",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mobile.cmallcms;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1083,11 +1175,12 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/cmallcms/Vender/UMessage_Sdk_1.5.0a",
+					"$(PROJECT_DIR)/cmallcms/Vender/GprinterSDK",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mobile.cmallcms;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "3d0e5e67-097f-4216-aacf-1e2aa5aeb0d0";
-				PROVISIONING_PROFILE_SPECIFIER = cmallcms_hoc;
+				PROVISIONING_PROFILE = "47d23acb-3ea8-4e57-af0f-c2c0e67568c9";
+				PROVISIONING_PROFILE_SPECIFIER = cmallcms_dis;
 				SWIFT_OBJC_BRIDGING_HEADER = "cmallcms/Networking/cmallcms-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};

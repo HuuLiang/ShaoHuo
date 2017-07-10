@@ -16,6 +16,11 @@ final class LoginPresenter: Presenter {
     var hud: MBProgressHUD?
     // 是否从服务器获取了验证码
     var isGetVerifyCodeFromServer: Bool = false
+    
+    override func viewHasLoaded() {
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        appDelegate?.registerUMengForRemoteNotifications()
+    }
     /// 登录
     ///
     /// - Parameters:
@@ -38,8 +43,12 @@ final class LoginPresenter: Presenter {
             return
         }
         
+        UserTicketModel.sharedInstance.login_type = .phone
+        
         _view.showHUDLoadView()
         interactor.login(phoneNumber: phoneNumber, verifyCode: verifyCode)
+        
+        //UserTicketModel.sharedInstance.loginType =
     }
     
     /// 账号密码登录
@@ -58,6 +67,9 @@ final class LoginPresenter: Presenter {
             _view.showErrorHUDView(errorString: "请输入密码")
             return
         }
+        
+        UserTicketModel.sharedInstance.login_type = .account
+        
         _view.showHUDLoadView()
         interactor.loginWidthAccount(name: name, pwd: pwd)
     }
@@ -113,15 +125,7 @@ final class LoginPresenter: Presenter {
             UserTicketModel.sharedInstance.uid = resutl!["ad_uid"] as? String
             
             _view.showSuccessHUDView(messageString: "登录成功")
-            
-            // 设置别名
-            UMessage.setAlias(UserTicketModel.sharedInstance.alias ?? "",
-                              type: "ishaohuo",
-                              response: { (responseObject, error) in
-                                log.info("responseObject: \(responseObject)")
-                                //log.info("error: \(error)")
-            })
-            
+
             ez.dispatchDelay(1.5, closure: {
                 self.view.loginSuccess()
             })

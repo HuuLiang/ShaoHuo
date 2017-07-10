@@ -59,22 +59,13 @@ extension UserInterface {
     }
     
     func showErrorHUDView(errorString: String, code: Int = 0) {
-        /*
-        var tmpHud: MBProgressHUD? = getViewFirstHudView()
-        if tmpHud == nil {
-            tmpHud = MBProgressHUD.showAdded(to: self.view, animated: true)
-        }
-        
-        tmpHud!.mode = MBProgressHUDMode.text
-        tmpHud!.label.text = "错误"
-        tmpHud!.detailsLabel.text = errorString
-        tmpHud!.hide(animated: true, afterDelay: 1.5)
-         */
         if code == -1009 {
             SVProgressHUD.showError(withStatus: "网络连接失败，请检查网络")
         }
         else {
-            SVProgressHUD.showError(withStatus: errorString)
+            if errorString.length > 0 {
+                SVProgressHUD.showError(withStatus: errorString)
+            }
         }
         SVProgressHUD.dismiss(withDelay: 1.5)
     }

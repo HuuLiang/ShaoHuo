@@ -142,3 +142,19 @@ class OrderDetailInfoTableViewCell: UITableViewCell {
 
 
 }
+/*
+extension OrderDetailInfoTableViewCell : TYAttributedLabelDelegate {
+    func attributedLabel(_ attributedLabel: TYAttributedLabel!, textStorageClicked textStorage: TYTextStorageProtocol!, at point: CGPoint) {
+        
+        if textStorage.isKind(of: TYLinkTextStorage.classForCoder()) {
+            let linkStr = (textStorage as! TYLinkTextStorage).linkData as! String
+            log.info("linkStr: \(linkStr)")
+            //URL(string: <#T##String#>)
+            if UIApplication.shared.canOpenURL(URL(string: "tel://\(linkStr)")!) {
+                UIApplication.shared.openURL(URL(string: "tel://\(linkStr)")!)
+            }
+        }
+    }
+
+}
+ */

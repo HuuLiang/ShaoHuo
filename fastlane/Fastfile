@@ -47,6 +47,30 @@ platform :ios do
     # frameit
   end
 
+  desc "Deploy a new version to the App Store "
+  lane :pgy_res do 
+      time = Time.new()
+      app_display_name = "捎货商家版"
+      app_name = "#{app_display_name}_#{time.month}_#{time.day}_#{time.hour}"
+    
+      update_info_plist( # Change the Display Name of your app
+        plist_path: "cmallcms/Info.plist",
+        display_name: app_display_name
+      )
+      gym(
+          configuration: "Adhoc",
+          scheme: "cmallcms",
+          clean: "true",
+          output_directory: "/Users/vicoo/Documents/ipa/",
+          output_name: "#{app_name}.ipa",
+          export_method: "ad-hoc",
+          archive_path: "/Users/vicoo/Documents/ipa/#{app_name}.xcarchive"
+        ) 
+
+      #上传到pgy
+      pgyer(api_key: "b45bc9967dbb9a580568c0fd6cc87306", user_key: "9e70a0593ed718d3b720a74b2c953087")
+  end
+
   desc "adhoc build to pgy"
   desc "This will also make sure the profile is up to date"
   lane :pgy do |options|

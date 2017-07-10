@@ -25,6 +25,11 @@ final class MessageView: UserInterface {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configTableView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         self.getMessageList(reload: true)
     }
     
@@ -44,6 +49,9 @@ final class MessageView: UserInterface {
         
         self.tableView?.separatorInset = UIEdgeInsets.zero
         self.tableView?.layoutMargins = UIEdgeInsets.zero
+        
+        self.tableView?.rowHeight = UITableViewAutomaticDimension
+        self.tableView?.estimatedRowHeight = 60
         
         self.tableView?.emptyDataSetSource = self
         self.tableView?.emptyDataSetDelegate = self
@@ -73,8 +81,12 @@ final class MessageView: UserInterface {
 extension MessageView: MessageViewInterface {
     
     func noMoreData() {
+//        self.tableView?.mj_header.endRefreshing()
+//        self.tableView?.mj_footer.endRefreshing()
+        self.tableView?.reloadData()
         self.tableView?.mj_header.endRefreshing()
-        self.tableView?.mj_footer.endRefreshing()
+        self.tableView?.mj_footer.endRefreshingWithNoMoreData()
+        //elf.tableView?.reloadData()
     }
     
     func finishedLoad() {
@@ -114,10 +126,10 @@ extension MessageView: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
         let cell = tableView.dequeueReusableCell(withIdentifier: MessageListTableViewCell.className, for: indexPath) as?  MessageListTableViewCell
-        
-        let msgItem = self.presenter.messageList[indexPath.row]
-        
-        cell?.msgItemEntity = msgItem
+        if self.presenter.messageList.count > 0 {
+            let msgItem = self.presenter.messageList[indexPath.row]
+            cell?.msgItemEntity = msgItem
+        }
         
         return cell!
     }
@@ -127,9 +139,10 @@ extension MessageView: UITableViewDataSource, UITableViewDelegate {
         
        return tableView.fd_heightForCell(withIdentifier: MessageListTableViewCell.className) { (cell) in
             let tmpCell = cell as! MessageListTableViewCell
-            
-            let msgItem = self.presenter.messageList[indexPath.row]
-            tmpCell.msgItemEntity = msgItem
+            if self.presenter.messageList.count > 0 {
+                let msgItem = self.presenter.messageList[indexPath.row]
+                tmpCell.msgItemEntity = msgItem
+            }
         }
     }
     
@@ -181,5 +194,9 @@ extension MessageView : DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
             ], range: NSMakeRange(0, attributeString.length))
         
         return attributeString
+    }
+    
+    func emptyDataSetShouldAllowScroll(_ scrollView: UIScrollView!) -> Bool {
+        return true
     }
 }

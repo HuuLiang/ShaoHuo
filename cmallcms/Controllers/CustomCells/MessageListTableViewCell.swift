@@ -41,7 +41,7 @@ class MessageListTableViewCell: UITableViewCell {
                 let formatter = DateFormatter()
                 formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
                 let newDate = formatter.date(from: create_time)
-                self.msgTimeLabel.text = newDate?.timeAgo(since: Date(), numericDates: true, numericTimes: true)
+                self.msgTimeLabel.text = newDate?.timeAgo(since: Date(), numericDates: true, numericTimes: false)
             }
         }
     }

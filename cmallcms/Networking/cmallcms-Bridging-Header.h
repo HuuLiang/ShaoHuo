@@ -38,3 +38,13 @@
 #import "SVProgressHUD/SVProgressHUD.h"
 #import <DZNEmptyDataSet/UIScrollView+EmptyDataSet.h>
 //#import <IDMPhotoBrowser/IDMPhotoBrowser.h>
+#import "DeviceInfo.h"
+#import "CBController.h"
+#import "BLKWrite.h"
+#import "TscCommand.h"
+#import "EscCommand.h"
+#import "UIImage+GPrint.h"
+
+#import <DTCoreText/DTCoreText.h>
+//#import "IGThermalSupport.h"
+//#import "ConnectViewController.h"

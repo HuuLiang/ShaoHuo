@@ -47,6 +47,11 @@ target "cmallcms" do
     pod 'JSQWebViewController'
     pod 'SKPhotoBrowser'
     pod 'SVProgressHUD'
+    
+    pod 'EFQRCode', '~> 1.2.5'
+    pod 'DTCoreText', '~> 1.6.20'
+    #pod 'arek', '~> 1.3.1'
+    #pod 'Harpy'
     #pod 'IDMPhotoBrowser'
     #pod 'Segmentio', '~> 2.1'
 end

@@ -81,11 +81,12 @@ final class OrderDetailPresenter: Presenter {
         }
         else {
             _view.hidHUDView()
-            let mapper = Mapper<OrderDetailEntity>()
-            orderEntity = mapper.map(JSON: result!)
+            if result != nil {
+                let mapper = Mapper<OrderDetailEntity>()
+                orderEntity = mapper.map(JSON: result!)
+                _view.navigationItem.title = (orderEntity?.order?.status_text ?? "") + "订单"
+            }
             view.finishedLoadOrderInfo()
-            
-            _view.navigationItem.title = (orderEntity?.order?.status_text ?? "") + "订单"
         }
     }
     
@@ -137,6 +138,7 @@ final class OrderDetailPresenter: Presenter {
             ez.runThisAfterDelay(seconds: 1.5, after: {
                 [weak self] in
                 self?.view.getOrderDetail()
+                
             })
         }
     }
@@ -159,7 +161,9 @@ final class OrderDetailPresenter: Presenter {
         }
         else {
             _view.hidHUDView()
-            self.shippingList = result!["list"] as! [[String: AnyObject]]
+            if result != nil {
+                self.shippingList = result!["list"] as! [[String: AnyObject]]
+            }
             view.showOrderShippingList()
         }
     }
@@ -206,7 +210,7 @@ final class OrderDetailPresenter: Presenter {
         
         for item in getOrderInfoTitleByStatus() {
             if item == "订单编号" {
-                attributeStrings.append(self.orderId)
+                attributeStrings.append(self.orderEntity?.order?.order_sn ?? "")
             }
             if item == "订单创建时间" {
                 attributeStrings.append(self.orderEntity!.order!.createtime ?? "")
@@ -225,9 +229,11 @@ final class OrderDetailPresenter: Presenter {
                 else if shipping_type == ORDER_SHIPPING_TYPE_SELF {
                     attributeStrings.append("自提")
                 }
+                else if shipping_type == ORDER_SHIPPING_TYPE_OTHER {
+                    attributeStrings.append("其它物流")
+                }
                 else {
-                    //express_name
-                    attributeStrings.append(self.orderEntity!.order!.express_name ?? "")
+                    attributeStrings.append(" ")
                 }
             }
             if item == "备注" {
@@ -249,6 +255,20 @@ final class OrderDetailPresenter: Presenter {
             return false
         }
         return true
+    }
+    
+    /// 增加打印小票次数
+    func addReciptPrintCount() {
+        self.interactor.addReceiptPrintCount(orderId: self.orderId)
+    }
+    
+    func responseReceiptPrintCount(error: CMCError?) -> Void {
+        if error != nil {
+            log.error(error?.localizedDescription ?? "")
+        }
+        else {
+            log.info("增加打印小票次数成功")
+        }
     }
 }
 

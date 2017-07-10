@@ -10,6 +10,7 @@ import UIKit
 import MJRefresh
 import JSQWebViewController
 import DZNEmptyDataSet
+import EZSwiftExtensions
 
 //MARK: - Public Interface Protocol
 protocol HomeViewInterface {
@@ -40,17 +41,126 @@ final class HomeView: UserInterface {
     
     var noNetworkView: UIView?
     
+    var errorViewIsShow: Bool = false
+    
+    // 批量发货按钮
+    var batchShippingButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configSegmentio()
         self.configTableView()
-        self.getNewOrderList(status: 0)
+        self.configBatchShipping()
+        
+        self.getNewOrderList(status: self.segmentedControl.selectedSegmentIndex)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        //self.tableView?.reloadData()
-        //self.getNewOrderList(status: self.segmentedControl.selectedSegmentIndex)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        configNavBarTitleView()
+    }
+    
+    func configBatchShipping() {
+        batchShippingButton = UIButton(type: UIButtonType.custom)
+        batchShippingButton.setImage(UIImage(named: "icon_batch_shipping"),
+                                     for: UIControlState.normal)
+        batchShippingButton.addTarget(self,
+                                      action: #selector(HomeView.batchButtonPressed),
+                                      for: UIControlEvents.touchUpInside)
+        view.addSubview(batchShippingButton)
+        
+        batchShippingButton.mas_makeConstraints { (make) in
+            let _ = make?.bottom.equalTo()(-60)
+            let _ = make?.right.equalTo()(-14)
+            let _ = make?.size.equalTo()(CGSize(width: 92, height: 92))
+        }
+        
+        batchShippingButton.isHidden = true
+    }
+    
+    func configNavBarTitleView() {
+        
+        self.navigationItem.titleView = nil
+        
+        let shopNameButton = UIButton(type: UIButtonType.custom)
+        shopNameButton.setTitle(UserTicketModel.sharedInstance.shop_name ?? "", for: UIControlState.normal)
+        shopNameButton.setImage(UIImage(named: "icon_down_arrow"), for: UIControlState.normal)
+        shopNameButton.addTarget(self,
+                                 action: #selector(HomeView.shopNameBtnPressed),
+                                 for: UIControlEvents.touchUpInside)
+        
+        shopNameButton.frame = CGRect(x: 0, y: 0, w: 200, h: 30)
+        
+        let labelSize = shopNameButton.titleLabel!.sizeThatFits(CGSize(width: 180, height: 30))
+        
+        shopNameButton.imageEdgeInsets = UIEdgeInsets(top: 2,
+                                                      left: labelSize.width,
+                                                      bottom: 0,
+                                                      right: -labelSize.width)
+            
+        shopNameButton.titleEdgeInsets = UIEdgeInsets(top: 0, left: -20, bottom: 0, right: 20)
+        
+        
+        self.navigationItem.titleView = shopNameButton
+        
+    }
+    
+    /// 批量发货 事件
+    func batchButtonPressed() -> Void {
+        log.info("batchButtonPressed")
+        
+        func sendShipping() {
+            let alert = UIAlertController(title: "提示",
+                                          message: "批量发货的商品仅允许到店自提，是否确认操作？",
+                                          preferredStyle: UIAlertControllerStyle.alert)
+            
+            alert.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: "确认", style: UIAlertActionStyle.default, handler: { (alertController) in
+                
+                self.presenter.batchShippingOrder()
+                
+            }))
+            
+            self.navigationController?.presentVC(alert)
+        }
+        
+        if GPrintHelp.shared.isConnecting == false {
+            
+            let alert = UIAlertController(title: "提示",
+                                          message: "打印机连接失败，请打开手机蓝牙，然后在 \"我的->打印机设置\" 中连接打印设备",
+                                          preferredStyle: UIAlertControllerStyle.alert)
+            
+            alert.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: "继续发货", style: UIAlertActionStyle.default, handler: { (alertController) in
+                sendShipping()
+            }))
+            
+            self.navigationController?.presentVC(alert)
+        }
+        else {
+            sendShipping()
+        }
+    }
+    
+    func shopNameBtnPressed() -> Void {
+        
+        if UserTicketModel.sharedInstance.shop_list.count <= 0 {
+            return
+        }
+        
+        let shopListView = ShopListViewController()
+        shopListView.title = "选择店铺管理"
+        shopListView.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(shopListView, animated: true)
+        
+        shopListView.callBack = {
+           [weak self] (needRload) in
+            self?.getNewOrderList(status: self!.segmentedControl.selectedSegmentIndex)
+        }
     }
     
     func configTableView() -> Void {
@@ -203,6 +313,7 @@ final class HomeView: UserInterface {
         segmentedControl.indexChangeBlock = {
             [weak self] index in
             self?.getNewOrderList(status: index)
+            self?.batchShippingButton.isHidden = index != 2
         }
         
         // 搜索
@@ -238,6 +349,13 @@ final class HomeView: UserInterface {
     
     func getNewOrderList(status: Int) -> Void {
         self.presenter.refreshNewData(status: status)
+    }
+    
+    func getNewOrderList() -> Void {
+        if self.segmentedControl != nil {
+            let status = self.segmentedControl.selectedSegmentIndex
+            self.presenter.refreshNewData(status: status)
+        }
     }
     
     /// 根据SECTION 获取总行数
@@ -311,6 +429,8 @@ final class HomeView: UserInterface {
     /// - Parameter orderId: 订单编号
     func showOrderDetailController(orderId: String) {
         
+        self.presenter.actionOrderId = orderId
+        
         let orderDetailModel = Module.build("OrderDetail")
         orderDetailModel.view.hidesBottomBarWhenPushed = true
         orderDetailModel.router.show(from: self.navigationController!,
@@ -320,12 +440,14 @@ final class HomeView: UserInterface {
     }
     
     func showRefundOrderDetailController(orderId: String) {
+        
+        self.presenter.actionOrderId = orderId
+        
         let orderDetailModel = Module.build("RefundOrderDetail")
         orderDetailModel.view.hidesBottomBarWhenPushed = true
         orderDetailModel.router.show(from: self.navigationController!,
                                      embedInNavController: false,
                                      setupData: orderId)
-       //self.navigationController?.pushViewController(orderDetailModel.view, animated: true)
     }
     /*
     func selectedOrderShippingType(index: Int) -> Void {
@@ -354,10 +476,8 @@ extension HomeView: HomeViewInterface {
     
     func noMoreData() {
         self.tableView?.mj_header.endRefreshing()
-        //self.tableView?.mj_footer.endRefreshing()
         self.tableView?.mj_footer.endRefreshingWithNoMoreData()
-        
-        self.tableView?.reloadData()
+        //self.tableView?.reloadData()
     }
     
     func finishedLoad() {
@@ -370,32 +490,34 @@ extension HomeView: HomeViewInterface {
     func needReloadOrderList() {
         //self.tableView?.mj_header.beginRefreshing()
         self.getNewOrderList(status: self.segmentedControl.selectedSegmentIndex)
+        
+        PushNotificationHelp.showBadgeValue()
     }
     
     func showOrderShippingList() {
         
         let orderListItem = self.presenter.orderList[currentSlectedIndex!.section]
-        
         let shippingList = self.presenter.shippingList
+        
+        if shippingList.count <= 0 {
+            return
+        }
         
         let deliverOrderController = DeliveryOrderViewController(nibName: "DeliveryOrderViewController", bundle: nil)
         deliverOrderController.title = "选择配送方式"
         deliverOrderController.hidesBottomBarWhenPushed = true
         deliverOrderController.shippingList = shippingList
+        deliverOrderController.orderId = orderListItem.order_id ?? ""
         self.navigationController?.pushViewController(deliverOrderController, animated: true)
         
-        deliverOrderController.selectedShippingTypeCallback = {
-            [weak self] (shippingType, expressName, expressId) in
-            log.info("shippingType: \(shippingType) expressName:\(expressName) expressId:\(expressId)")
-            
-            self?.presenter.deliveryOrder(orderId: orderListItem.order_id ?? "",
-                                         shipping_type: shippingType,
-                                         express_name: expressName,
-                                         shipping_id: expressId)
-        }
+        self.presenter.actionOrderId = orderListItem.order_id
+        
     }
     
     func showNoNetWorkErrorView() {
+        
+        errorViewIsShow = true
+        
         self.noNetworkView!.mas_updateConstraints { (make) in
            let _ = make?.top.equalTo()(64)
         }
@@ -406,6 +528,11 @@ extension HomeView: HomeViewInterface {
     }
     
     func hideNoNetWorkErrorView() {
+        
+        if errorViewIsShow == false {
+            return
+        }
+        
         self.noNetworkView!.mas_updateConstraints { (make) in
             let _ = make?.top.equalTo()(29)
         }
@@ -413,6 +540,15 @@ extension HomeView: HomeViewInterface {
         UIView.animate(withDuration: 0.3, animations: {
             self.view.layoutIfNeeded()
         })
+        
+        if self.presenter.orderList.count <= 0 {
+            ez.runThisAfterDelay(seconds: 0.3, after: { 
+                //self.tableView?.mj_header.beginRefreshing()
+                self.presenter.refreshNewData(status: self.segmentedControl.selectedSegmentIndex)
+            })
+        }
+
+        errorViewIsShow = false
     }
 }
 
@@ -576,12 +712,18 @@ extension HomeView : UITableViewDataSource , UITableViewDelegate {
             let sub_item = orderListItem.sub_list[indexPath.row-1]
             let goods_id = sub_item.goods_id ?? ""
             let webController: WebViewController  = WebViewController(url: URL(string: "\(CMallHTML5HostUrlString)index/details?goods_id=\(goods_id)")!)
+            webController.displaysWebViewTitle = true
             webController.hidesBottomBarWhenPushed = true
             //webController.progressBar.tintColor = CMCColor.hlightedButtonBackgroundColor
             
             self.navigationController?.show(webController, sender: nil)
         }
+        else if indexPath.row == 0 {
+            //mobile
+            self.showPhonePickView(orderListItem.mobile ?? "")
+        }
         else {
+            
             self.showOrderDetailController(orderId: orderListItem.order_id ?? "")
         }
     }
@@ -590,7 +732,7 @@ extension HomeView : UITableViewDataSource , UITableViewDelegate {
 extension HomeView : DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
     
     func image(forEmptyDataSet scrollView: UIScrollView!) -> UIImage! {
-        return UIImage(named: "icon_no_message")
+        return UIImage(named: "icon_no_order")
     }
     func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
         
@@ -602,6 +744,10 @@ extension HomeView : DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
             ], range: NSMakeRange(0, attributeString.length))
         
         return attributeString
+    }
+    
+    func emptyDataSetShouldAllowScroll(_ scrollView: UIScrollView!) -> Bool {
+        return true
     }
 }
 

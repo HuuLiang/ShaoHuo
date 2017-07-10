@@ -31,11 +31,25 @@ class SKUItemTableViewCell: UITableViewCell {
     
     var skuItemEntity: SKUItemEntity? {
         didSet {
-            self.skuItemImageView.sd_setImage(with: URL(string: skuItemEntity?.goods_img ?? ""))
-            self.skuItemNameLabel.text = skuItemEntity?.goods_name ?? ""
+            
+            if let goods_img = skuItemEntity?.goods_img {
+                var tmpGoodsImg: String = goods_img
+                if goods_img.hasPrefix("http://") {
+                    tmpGoodsImg = goods_img.replacingOccurrences(of: "http://", with: "https://")
+                }
+                self.skuItemImageView.sd_setImage(with: URL(string: tmpGoodsImg))
+            }
+            
+            var sku_text: String = ""
+            if let tmp_sku_text = skuItemEntity?.sku_text, tmp_sku_text.length > 0 {
+                sku_text = " \(tmp_sku_text.replacingOccurrences(of: "；", with: ""))"
+            }
+            self.skuItemNameLabel.text = "\(skuItemEntity?.goods_name ?? "") \(sku_text)"
+            
+            
             self.skuItemCountLabel.text = "x\((skuItemEntity?.goods_number ?? 0))"
             
-            let totalAmount = skuItemEntity!.amout! * 0.01
+            let totalAmount = skuItemEntity!.price! * 0.01
             self.priceLabel.text = String(format: "￥%.2f", totalAmount)
         }
     }

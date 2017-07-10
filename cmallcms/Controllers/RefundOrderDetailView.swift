@@ -369,7 +369,7 @@ extension RefundOrderDetailView : UITableViewDataSource, UITableViewDelegate {
                 tmpCell.orderSNLabel.textAlignment = NSTextAlignment.right
                 
                 tmpCell.receiveAddressTitleLabel.text = "合计："
-                tmpCell.receiveAddressLabel.text = String(format: "￥%.2f", amount*0.01)
+                tmpCell.receiveAddressLabel.text = String(format: "￥%.2f", (amount+shipping_fee-bonus_amount)*0.01)
                 tmpCell.receiveAddressLabel.textAlignment = NSTextAlignment.right
                 tmpCell.receiveAddressLabel.textColor = CMCColor.hlightedButtonBackgroundColor
                 
@@ -476,6 +476,7 @@ extension RefundOrderDetailView : UITableViewDataSource, UITableViewDelegate {
                 let sub_item = sub_list![indexPath.row-1]
                 let goods_id = sub_item.goods_id ?? ""
                 let webController: WebViewController  = WebViewController(url: URL(string: "\(CMallHTML5HostUrlString)index/details?goods_id=\(goods_id)")!)
+                webController.displaysWebViewTitle = true
                 self.navigationController?.show(webController, sender: nil)
             }
         }

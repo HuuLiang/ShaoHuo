@@ -9,6 +9,7 @@
 import UIKit
 import JSQWebViewController
 import DZNEmptyDataSet
+import EZSwiftExtensions
 
 //MARK: - Public Interface Protocol
 protocol OrderSearchViewInterface {
@@ -111,8 +112,8 @@ final class OrderSearchView: UserInterface {
     
     func textFieldValueChanged(textField: UITextField) -> Void {
         log.info("textFiedl: \(textField.text ?? "")")
-        if let searchKeyword = textField.text, searchKeyword.length > 0 {
-            self.getNewOrderList(status: 0, search: textField.text ?? "")
+        if let searchKeyword = textField.text {
+            self.getNewOrderList(status: 0, search: searchKeyword.trimmed())
         }
     }
     
@@ -437,18 +438,27 @@ extension OrderSearchView : UITableViewDataSource, UITableViewDelegate {
             let sub_item = orderListItem.sub_list[indexPath.row-1]
             let goods_id = sub_item.goods_id ?? ""
             let webController: WebViewController  = WebViewController(url: URL(string: "\(CMallHTML5HostUrlString)index/details?goods_id=\(goods_id)")!)
+            webController.displaysWebViewTitle = true
             //webController.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(webController, animated: true)
             //self.navigationController?.show(webController, sender: nil)
         }
-        
+        else {
+            self.showOrderDetailController(orderId: orderListItem.order_id ?? "")
+        }
     }
-
 }
 
 extension OrderSearchView : DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
     
     func image(forEmptyDataSet scrollView: UIScrollView!) -> UIImage! {
         return UIImage(named: "icon_no_order_result")
+    }
+    
+    func emptyDataSetShouldDisplay(_ scrollView: UIScrollView!) -> Bool {
+        if let searchText = self.searchTextField?.text, searchText.length > 0 {
+            return true
+        }
+        return false
     }
 }

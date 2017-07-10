@@ -17,10 +17,16 @@
  获取服务证书
  openssl s_client -connect service-app.ishaohuo.cn:443 /dev/null | openssl x509 -outform DER > https.cer
  
- */
+*/
 
-NSString * const AFAppDotNetAPIBaseURLString = @"https://test-cmall-b.ishaohuo.cn/";
-NSString * const CMallHTML5HostUrlString = @"http://test-cmall.ishaohuo.cn/";
+//NSString * const AFAppDotNetAPIBaseURLString = @"https://test-cmall-b.ishaohuo.cn/";
+//NSString * const CMallHTML5HostUrlString = @"http://test-cmall.ishaohuo.cn/";
+
+//NSString * const AFAppDotNetAPIBaseURLString = @"https://pre-cmall-b.ishaohuo.cn/";
+//NSString * const CMallHTML5HostUrlString = @"http://pre-cmall.ishaohuo.cn/";
+
+NSString * const AFAppDotNetAPIBaseURLString = @"https://cmall-b.ishaohuo.cn/";
+NSString * const CMallHTML5HostUrlString = @"http://cmall.ishaohuo.cn/";
 
 @implementation CMCRequestManager
 

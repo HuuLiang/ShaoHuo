@@ -9,7 +9,7 @@
 import UIKit
 import ObjectMapper
 
-struct SKUItemEntity: Mappable {
+class SKUItemEntity: Mappable {
     //规格文字描述，使用：sub_list['sku_text']['sku_text'] ps:后面这个字段可能保存其他内容
     var sku_text: String?
     // 商品名称
@@ -32,13 +32,13 @@ struct SKUItemEntity: Mappable {
     var bonus_amount: Double?
     var shipping_fee: Double?
     
-    public init?(map: Map) {
+    required init?(map: Map) {
         
     }
     
-    mutating public func mapping(map: Map)  {
+    func mapping(map: Map)  {
         
-        sku_text <- map["sku_text"]
+        sku_text <- map["sku_text.sku_text"]
         goods_name <- map["goods_name"]
         goods_id <- map["goods_id"]
         order_id <- map["order_id"]

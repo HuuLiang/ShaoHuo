@@ -16,13 +16,24 @@ import ObjectMapper
 
 ///public let AFAppDotNetAPIBaseURLString: NSString = "https://test-service-app.ishaohuo.cn/"
 
-enum CMCError: Error {
+enum CMCError: Error, CustomDebugStringConvertible {
     case jsonSerializedFailed
     case responseError(code: Int, message: String)
     case verifyTextFieldError(message: String)
     
     static func converResponseError(error: NSError) -> CMCError {
         return .responseError(code: error.code, message: error.localizedFailureReason ?? "")
+    }
+    
+    var debugDescription: String {
+        switch self {
+        case .jsonSerializedFailed:
+            return "jsonSerializedFailed"
+        case .responseError(let code, let message):
+            return "responseError code: \(code), msg: \(message)"
+        case .verifyTextFieldError(let message):
+            return "verifyTextFieldError msg: \(message)"
+        }
     }
 }
 

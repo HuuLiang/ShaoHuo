@@ -40,12 +40,12 @@ final class OrderSearchPresenter: Presenter {
         
         sessionDataTask?.cancel()
         //let _ = _view.showHUDLoadView()
+        if searchText.length > 0 {
+            sessionDataTask = interactor.getOrderListFromServer(pageListParam: pageListParam,
+                                                                status: status,
+                                                                searchText: searchText)
+        }
         
-        sessionDataTask?.cancel()
-        sessionDataTask = interactor.getOrderListFromServer(pageListParam: pageListParam,
-                                                            status: status,
-                                                            searchText: searchText)
-        //sessionDataTask = interactor.getOrderListFromServer(pageListParam: pageListParam, status: status)
     }
     
 //    func getOrderList(status: Int) -> Void {
@@ -78,16 +78,17 @@ final class OrderSearchPresenter: Presenter {
             
             switch tmpError {
             case .jsonSerializedFailed, .verifyTextFieldError(_):
-                _view.showErrorHUDView(errorString: "加载数据失败")
-                
+                //_view.showErrorHUDView(errorString: "加载数据失败")
+                _view.hidHUDView()
             case .responseError(let code, let message):
                 
                 if _view.checkErrorCode(code: code) {
                     _view.hidHUDView()
                 }
                 else {
-                    _view.showErrorHUDView(errorString: message, code: code)
+                    _view.hidHUDView()
                 }
+                log.error("code: \(code), message:\(message)")
             }
             
             view.finishedLoad()
@@ -96,24 +97,29 @@ final class OrderSearchPresenter: Presenter {
             
             _view.hidHUDView()
             
-            let listJSONArray = result?["list"] as! [[String: AnyObject]]
-            let mapper = Mapper<OrderListEntity>()
-            let tmpOrderList: [OrderListEntity] = mapper.mapArray(JSONArray: listJSONArray)!
-            
-            if tmpOrderList.count <= 0 {
-                view.noMoreData()
-            }
-            else {
-                self.orderList.append(contentsOf: tmpOrderList)
-                
-                let lastItem = self.orderList.last
-                
-                self.pageListParam.from = lastItem?.order_id ?? ""
-                self.pageListParam.last = ""
-                
+            if result == nil {
                 view.finishedLoad()
             }
-            log.info("responseOrderList result :\(result)")
+            else {
+                let listJSONArray = result?["list"] as! [[String: AnyObject]]
+                let mapper = Mapper<OrderListEntity>()
+                let tmpOrderList: [OrderListEntity] = mapper.mapArray(JSONArray: listJSONArray)!
+                
+                if tmpOrderList.count <= 0 {
+                    view.noMoreData()
+                }
+                else {
+                    self.orderList.append(contentsOf: tmpOrderList)
+                    
+                    let lastItem = self.orderList.last
+                    
+                    self.pageListParam.from = lastItem?.order_id ?? ""
+                    self.pageListParam.last = ""
+                    
+                    view.finishedLoad()
+                }
+                log.info("responseOrderList result :\(result)")
+            }
         }
     }
     

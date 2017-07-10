@@ -8,6 +8,8 @@
 
 import UIKit
 import SDWebImage
+import EZSwiftExtensions
+import JSQWebViewController
 
 //MARK: - Public Interface Protocol
 protocol MyViewInterface {
@@ -26,23 +28,38 @@ final class MyView: UserInterface {
     var shopNameLabel: UILabel?
     var shopAddressLabel: UIButton?
     
+    var printConnectController: GPrintConnectViewController! // =  //GPrintConnectViewController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.printConnectController = (UIApplication.shared.delegate as! AppDelegate).printConnectController
         
         self.configNavigationBar()
         self.configTableView()
         self.configTableViewHeaderView()
+        self.configTableViewFooterView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.getShopInfo()
+        
+        self.navigationController?.navigationBar.lt_reset()
+        self.navigationController?.navigationBar.lt_setBackgroundColor(backgroundColor: UIColor.clear)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        self.navigationController?.navigationBar.lt_setBackgroundGradientColor(colors: CMCColor.navbarGradientColor,
+                                                                               startPoint: CGPoint(x: 0, y: 0),
+                                                                               endPoint: CGPoint(x: 1, y: 0),
+                                                                               locations: [0, 0.65, 1.0])
     }
     
     func configNavigationBar() {
         self.navigationItem.title = ""
-        self.navigationController?.navigationBar.lt_reset()
-        self.navigationController?.navigationBar.lt_setBackgroundColor(backgroundColor: UIColor.clear)
         
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "我",
                                                                 style: UIBarButtonItemStyle.plain,
@@ -74,8 +91,6 @@ final class MyView: UserInterface {
             let _ = make?.right.equalTo()(0)
             let _ = make?.bottom.equalTo()(0)
         }
-        
-        
     }
     
     func configTableViewHeaderView() -> Void {
@@ -143,6 +158,42 @@ final class MyView: UserInterface {
             let _ = make?.right.equalTo()(-14)
             let _ = make?.height.equalTo()(20)
         })
+        
+        let rightArrowButton = UIButton(type: UIButtonType.custom);
+        rightArrowButton.setImage(UIImage(named:"icon_right_arrow"),
+                                  for: UIControlState.normal);
+        headView.addSubview(rightArrowButton);
+        rightArrowButton.addTarget(self, action: #selector(MyView.rightArrowButtonPressed),
+                                   for: UIControlEvents.touchUpInside)
+        
+        rightArrowButton.mas_makeConstraints { (make) in
+            let _ = make?.right.equalTo()(-10)
+            let _ = make?.size.equalTo()(CGSize(width: 30, height: 30))
+            let _ = make?.top.equalTo()(77)
+        }
+    }
+    
+    func configTableViewFooterView() {
+        
+        let footerView = UIView(frame: CGRect(x: 0, y: ez.screenHeight - 99, w: ez.screenWidth, h: 50))
+        //self.tableView.tableFooterView = footerView
+        self.view.addSubview(footerView)
+        
+        let verseionLabel = UILabel(frame: CGRect(x: 14, y: 20, w: ez.screenWidth-28, h: 20))
+        verseionLabel.textColor = CMCColor.normalButtonBackgroundColor
+        verseionLabel.text =  "\(ez.appVersionAndBuild ?? "")"
+        verseionLabel.font = UIFont.systemFont(ofSize: 12)
+        verseionLabel.textAlignment = NSTextAlignment.center
+        footerView.addSubview(verseionLabel)
+        
+    }
+    
+    func rightArrowButtonPressed() {
+        let shopInfoController = ShopInfoViewController()
+        shopInfoController.shopInfo = self.presenter.shopInfo
+        shopInfoController.hidesBottomBarWhenPushed = true
+        shopInfoController.title = "我"
+        self.navigationController?.pushViewController(shopInfoController, animated: true)
     }
     
     func logoButtonPressed() -> Void {
@@ -164,12 +215,20 @@ final class MyView: UserInterface {
     func setShopInfo() {
         
         if let logo = self.presenter.shopInfo?["logo"] {
-            headerImageView?.sd_setImage(with: URL(string: logo as! String))
+            
+            var tmpLogo: String = logo as! String
+            if logo.hasPrefix("http://") {
+                tmpLogo = logo.replacingOccurrences(of: "http://", with: "https://")
+            }
+            headerImageView?.sd_setImage(with: URL(string: tmpLogo))
         }
         
         if let shop_address = self.presenter.shopInfo?["shop_address"] {
             shopAddressLabel?.setTitle(shop_address as? String, for: UIControlState.normal)
         }
+        
+        shopNameLabel?.text = UserTicketModel.sharedInstance.shop_name ?? ""
+        
         self.tableView.reloadData()
     }
 }
@@ -198,7 +257,7 @@ extension MyView : UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -209,8 +268,21 @@ extension MyView : UITableViewDataSource, UITableViewDelegate {
             cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: cellIdentifier)
             cell?.textLabel?.font = UIFont.systemFont(ofSize: 15)
             cell?.textLabel?.textColor = UIColor(hexString: "333333")
+            cell?.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
         }
-        
+        if indexPath.row == 0 {
+            cell?.imageView?.image = UIImage(named: "icon_print")
+            cell?.textLabel?.text = "打印机设置"
+        }
+        if indexPath.row == 1 {
+            cell?.imageView?.image = UIImage(named: "icon_faq")
+            cell?.textLabel?.text = "常见问题(FAQ)"
+        }
+        if indexPath.row == 2 {
+            cell?.imageView?.image = UIImage(named: "icon_bi")
+            cell?.textLabel?.text = "报表"
+        }
+        /*
         if indexPath.row == 0 {
             cell?.imageView?.image = UIImage(named: "icon_my_shop")
             
@@ -248,7 +320,7 @@ extension MyView : UITableViewDataSource, UITableViewDelegate {
             else {
                 cell?.textLabel?.text = "店铺地址："
             }
-        }
+        }*/
         
         return cell!
     }
@@ -259,5 +331,44 @@ extension MyView : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        //打印机设置
+        if indexPath.row == 0 {
+            
+            printConnectController.hidesBottomBarWhenPushed = true
+            printConnectController.title = "打印机设置"
+            self.navigationController?.pushViewController(printConnectController, animated: true)
+            
+        }
+        
+        // 常见问题
+        if indexPath.row == 1 {
+            if let url = self.presenter.shopInfo?[ShopInfoKey.fqa_url] {
+                //let webView = Webviewco
+                
+                let webController: WebViewController  = WebViewController(url: URL(string: url as! String)!)
+                webController.displaysWebViewTitle = true
+                webController.hidesBottomBarWhenPushed = true
+                //webController.progressBar.tintColor = CMCColor.hlightedButtonBackgroundColor
+                self.navigationController?.show(webController, sender: nil)
+
+            }
+        }
+        // 报表
+        if indexPath.row == 2 {
+            if let url = self.presenter.shopInfo?[ShopInfoKey.chart_url] {
+                //let webView = Webviewco
+                let chart_url = "\(url as! String)?shop_id=\(UserTicketModel.sharedInstance.shop_id ?? "")"
+                
+                log.info("chart_url:\(chart_url)")
+                
+                let webController: WebViewController  = WebViewController(url: URL(string: chart_url)!)
+                webController.displaysWebViewTitle = true
+                webController.hidesBottomBarWhenPushed = true
+                //webController.progressBar.tintColor = CMCColor.hlightedButtonBackgroundColor
+                self.navigationController?.show(webController, sender: nil)
+                
+            }
+        }
     }
 }

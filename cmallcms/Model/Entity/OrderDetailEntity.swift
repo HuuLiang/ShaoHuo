@@ -9,18 +9,18 @@
 import Foundation
 import ObjectMapper
 
-struct OrderDetailEntity : Mappable {
+class OrderDetailEntity : Mappable {
     
     var order: OrderDetailItemEntity?
     var action_list: [OrderTrackItemEntity]? = []
     
     var refund: OrderRefundEntity?
     
-    public init?(map: Map) {
+    required init?(map: Map) {
         
     }
     
-    mutating public func mapping(map: Map)  {
+    func mapping(map: Map)  {
         
         order <- map["order"]
         action_list <- map["action_list"]
@@ -28,7 +28,7 @@ struct OrderDetailEntity : Mappable {
     }
 }
 
-struct OrderDetailItemEntity: Mappable {
+class OrderDetailItemEntity: Mappable {
     // 订单id
     var order_id: String?
     // 用户id
@@ -130,11 +130,15 @@ struct OrderDetailItemEntity: Mappable {
     // 支付方式字符串
     var payment_text: String?
     
-    public init?(map: Map) {
+    var qr_url: String?
     
+    //var print_count: Int?
+    
+    required init?(map: Map) {
+        
     }
     
-    mutating public func mapping(map: Map)  {
+    func mapping(map: Map)  {
         // 订单id
         order_id <- map["order_id"]
         // 用户id
@@ -150,7 +154,7 @@ struct OrderDetailItemEntity: Mappable {
         // 商品名称
         goods_name <- map["goods_name"]
         goods_img <- map["goods_img"]
-        sku_text <- map["sku_text"]
+        sku_text <- map["sku_text.sku_text"]
         amout <- (map["amout"], doubleTransform)
         //物流类型，1：捎货物流，2：其它物流，3：自提
         shipping_type <- (map["shipping_type"], intTransform)
@@ -235,5 +239,7 @@ struct OrderDetailItemEntity: Mappable {
         pay_time <- map["pay_time"]
         // 支付方式字符串
         payment_text <- map["payment_text"]
+        
+        qr_url <- map["qr_url"]
     }
 }

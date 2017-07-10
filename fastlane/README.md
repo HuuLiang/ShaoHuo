@@ -47,6 +47,11 @@ This will also make sure the profile is up to date
 fastlane ios release
 ```
 Deploy a new version to the App Store
+### ios pgy_res
+```
+fastlane ios pgy_res
+```
+Deploy a new version to the App Store 
 ### ios pgy
 ```
 fastlane ios pgy

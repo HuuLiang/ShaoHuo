@@ -70,9 +70,10 @@ final class RefundOrderDetailPresenter: Presenter {
         }
         else {
             _view.hidHUDView()
-            
-            let mapper = Mapper<OrderDetailEntity>()
-            orderEntity = mapper.map(JSON: result!)
+            if result != nil {
+                let mapper = Mapper<OrderDetailEntity>()
+                orderEntity = mapper.map(JSON: result!)
+            }
             view.finishedLoadOrderInfo()
         }
     }
@@ -126,7 +127,7 @@ final class RefundOrderDetailPresenter: Presenter {
         
         for item in getOrderInfoTitleByStatus() {
             if item == "订单编号" {
-                attributeStrings.append(self.orderId)
+                attributeStrings.append(self.orderEntity?.order?.order_sn ?? "")
             }
             if item == "订单创建时间" {
                 attributeStrings.append(self.orderEntity!.order!.createtime ?? "")

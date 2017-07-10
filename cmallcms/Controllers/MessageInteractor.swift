@@ -17,6 +17,7 @@ final class MessageInteractor: Interactor {
             "ad_uid": UserTicketModel.sharedInstance.uid ?? "",
             "token": UserTicketModel.sharedInstance.token ?? "",
             "size": "\(pageListParam.size)",
+            "shop_id": UserTicketModel.sharedInstance.shop_id ?? "",
             "from": pageListParam.from,
             "last": pageListParam.last
         ]
@@ -36,6 +37,7 @@ final class MessageInteractor: Interactor {
         let params = [
             "ad_uid": UserTicketModel.sharedInstance.uid ?? "",
             "token": UserTicketModel.sharedInstance.token ?? "",
+            "shop_id": UserTicketModel.sharedInstance.shop_id ?? "",
             "type": "\(type)",
             "pn_id": pn_id
         ]
@@ -50,6 +52,7 @@ final class MessageInteractor: Interactor {
         let params = [
             "ad_uid": UserTicketModel.sharedInstance.uid ?? "",
             "token": UserTicketModel.sharedInstance.token ?? "",
+            "shop_id": UserTicketModel.sharedInstance.shop_id ?? "",
             "pn_id": pn_id
         ]
         

@@ -14,7 +14,8 @@ import UserNotifications
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
+    let printConnectController = GPrintConnectViewController()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -48,14 +49,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        
+        PushNotificationHelp.cleanBadgeValue()
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+        
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        
+        if UserTicketModel.sharedInstance.isLogin == true {
+            PushNotificationHelp.showBadgeValue()
+            let rootViewController = self.window?.rootViewController as? UITabBarController
+            if let navigationController: UINavigationController = rootViewController?.viewControllers?[0] as? UINavigationController {
+                
+                if let tmp_home_view = navigationController.topViewController as? HomeView {
+                    tmp_home_view.getNewOrderList()
+                }
+            }
+        }
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
@@ -100,6 +115,21 @@ extension AppDelegate {
                        launchOptions: launchOptions,
                        httpsEnable: true)
         
+        
+        if UserTicketModel.sharedInstance.isLogin {
+            self.registerUMengForRemoteNotifications()
+        }
+        
+        //UMConfigInstance.appKey = CMCConfig.UMengPushAppKey
+        let analyticsConfig = UMAnalyticsConfig.sharedInstance()
+        analyticsConfig?.channelId = "App Store"
+        analyticsConfig?.appKey = CMCConfig.UMengPushAppKey
+        
+        MobClick.start(withConfigure: analyticsConfig)
+    }
+    
+    func registerUMengForRemoteNotifications() {
+        
         UMessage.registerForRemoteNotifications()
         
         if #available(iOS 10.0, *) {
@@ -116,13 +146,12 @@ extension AppDelegate {
                                                 //点击不允许
                                             }
             })
-        } else {
-            
-            let setting = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
-            UIApplication.shared.registerUserNotificationSettings(setting)
         }
+//        else {
+//            let setting = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
+//            UIApplication.shared.registerUserNotificationSettings(setting)
+//        }
         UMessage.setLogEnabled(true)
-        
     }
     
     /// 显示指引界面
@@ -168,7 +197,7 @@ extension AppDelegate {
         UITabBarItem.appearance().setTitleTextAttributes([
             NSForegroundColorAttributeName: CMCColor.hlightedButtonBackgroundColor,
             NSFontAttributeName: UIFont.systemFont(ofSize: 12)
-            ], for: UIControlState.highlighted)
+            ], for: UIControlState.selected)
         
         let homeModule = Module.build("Home")
         homeModule.view.title = "订单"

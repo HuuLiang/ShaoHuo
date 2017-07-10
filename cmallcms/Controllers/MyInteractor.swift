@@ -16,7 +16,8 @@ final class MyInteractor: Interactor {
         let params = [
             "ad_uid": UserTicketModel.sharedInstance.uid ?? "",
             "token": UserTicketModel.sharedInstance.token ?? "",
-            "user_type": UserTicketModel.sharedInstance.user_type ?? ""
+            "user_type": UserTicketModel.sharedInstance.user_type ?? "",
+            "shop_id": UserTicketModel.sharedInstance.shop_id ?? ""
         ]
         
         UserLoginModel.shared.userShopInfo(params) { (result, error) in

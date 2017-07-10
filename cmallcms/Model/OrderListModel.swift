@@ -30,7 +30,7 @@ class OrderListModel: NSObject {
             
             let responseDic = try? JSONSerialization.jsonObject(with: responseData as! Data,
                                                                 options: .allowFragments)
-            //log.info("orderList responseDic: \(responseDic)")
+            log.info("orderList responseDic: \(responseDic)")
             //log.info("orderList url string" + (sessionTask.currentRequest?.url?.absoluteString ?? ""))
             if responseDic == nil {
                 complete(nil, CMCError.jsonSerializedFailed)
@@ -199,6 +199,87 @@ class OrderListModel: NSObject {
             let responseDic = try? JSONSerialization.jsonObject(with: responseData as! Data,
                                                                 options: .allowFragments)
             log.info("orderRefundDispose responseDic: \(responseDic)")
+            if responseDic == nil {
+                complete(nil, CMCError.jsonSerializedFailed)
+            }
+            else {
+                let (result, error) = ConverNetworkResponse(responseData: responseDic as! [String : AnyObject])
+                complete(result, error)
+            }
+        }) { (sessionData, error) in
+            complete(nil, CMCError.converResponseError(error: error as NSError))
+        }
+    }
+    
+    @discardableResult
+    func orderBatchDelivery(_ params: [String: String], complete: @escaping (_ result:[String : AnyObject]?, _ error: CMCError?) -> Void) -> URLSessionDataTask? {
+        
+        let versionParams = NSMutableDictionary(dictionary: params).buildVersionParams()
+        log.info("versionParams: \(versionParams)")
+        
+        return CMCRequestManager.sharedClient().post("order/batchDelivery", parameters: versionParams, progress: nil, success: { (sessionTask, responseData) in
+            
+            let responseDic = try? JSONSerialization.jsonObject(with: responseData as! Data,
+                                                                options: .allowFragments)
+            log.info("orderRefundDispose responseDic: \(responseDic)")
+            if responseDic == nil {
+                complete(nil, CMCError.jsonSerializedFailed)
+            }
+            else {
+                let (result, error) = ConverNetworkResponse(responseData: responseDic as! [String : AnyObject])
+                complete(result, error)
+            }
+        }) { (sessionData, error) in
+            complete(nil, CMCError.converResponseError(error: error as NSError))
+        }
+    }
+    
+    /// 首页红点显示
+    ///
+    /// - Parameters:
+    ///   - params: ad_uid  token  shop_id
+    ///   - complete:
+    /// - Returns:
+    @discardableResult
+    func getIndexPoint(_ params: [String: String], complete: @escaping (_ result:[String : AnyObject]?, _ error: CMCError?) -> Void) -> URLSessionDataTask? {
+        
+        let versionParams = NSMutableDictionary(dictionary: params).buildVersionParams()
+        log.info("versionParams: \(versionParams)")
+        
+        return CMCRequestManager.sharedClient().post("common/getIndexPoint", parameters: versionParams, progress: nil, success: { (sessionTask, responseData) in
+            
+            let responseDic = try? JSONSerialization.jsonObject(with: responseData as! Data,
+                                                                options: .allowFragments)
+            log.info("getIndexPoint responseDic: \(responseDic)")
+            if responseDic == nil {
+                complete(nil, CMCError.jsonSerializedFailed)
+            }
+            else {
+                let (result, error) = ConverNetworkResponse(responseData: responseDic as! [String : AnyObject])
+                complete(result, error)
+            }
+        }) { (sessionData, error) in
+            complete(nil, CMCError.converResponseError(error: error as NSError))
+        }
+    }
+    
+    /// 增加打印小票次数
+    ///
+    /// - Parameters:
+    ///   - params:
+    ///   - complete:
+    /// - Returns:
+    @discardableResult
+    func orderAddReceiptPrintCount(_ params: [String: String], complete: @escaping (_ result:[String : AnyObject]?, _ error: CMCError?) -> Void) -> URLSessionDataTask? {
+        
+        let versionParams = NSMutableDictionary(dictionary: params).buildVersionParams()
+        log.info("versionParams: \(versionParams)")
+        
+        return CMCRequestManager.sharedClient().post("order/addReceiptPrintTime", parameters: versionParams, progress: nil, success: { (sessionTask, responseData) in
+            
+            let responseDic = try? JSONSerialization.jsonObject(with: responseData as! Data,
+                                                                options: .allowFragments)
+            log.info("getIndexPoint responseDic: \(responseDic)")
             if responseDic == nil {
                 complete(nil, CMCError.jsonSerializedFailed)
             }

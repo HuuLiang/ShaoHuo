@@ -16,6 +16,7 @@ final class OrderDetailInteractor: Interactor {
         let params = [
             "ad_uid": UserTicketModel.sharedInstance.uid ?? "",
             "token": UserTicketModel.sharedInstance.token ?? "",
+            "shop_id": UserTicketModel.sharedInstance.shop_id ?? "",
             "order_id": orderId
         ]
         
@@ -29,6 +30,7 @@ final class OrderDetailInteractor: Interactor {
         let params = [
             "ad_uid": UserTicketModel.sharedInstance.uid ?? "",
             "token": UserTicketModel.sharedInstance.token ?? "",
+            "shop_id": UserTicketModel.sharedInstance.shop_id ?? "",
             "order_id": orderId
         ]
         
@@ -44,6 +46,7 @@ final class OrderDetailInteractor: Interactor {
             "token": UserTicketModel.sharedInstance.token ?? "",
             "order_id": orderId,
             "shipping_type": "\(shipping_type)",
+            "shop_id": UserTicketModel.sharedInstance.shop_id ?? "",
             "express_name": express_name,
             "shipping_id": shipping_id
         ]
@@ -58,11 +61,29 @@ final class OrderDetailInteractor: Interactor {
         let params = [
             "ad_uid": UserTicketModel.sharedInstance.uid ?? "",
             "token": UserTicketModel.sharedInstance.token ?? "",
+            "shop_id": UserTicketModel.sharedInstance.shop_id ?? "",
             "order_id": orderId,
             ]
         
         OrderListModel.shared.orderShippingList(params: params) { (result, error) in
             self.presenter.responseOrderShippingList(result: result, error: error)
+        }
+    }
+    
+    /// 增加打印次数
+    ///
+    /// - Parameter orderId: 订单号
+    func addReceiptPrintCount(orderId: String) {
+        
+        let params = [
+            "ad_uid": UserTicketModel.sharedInstance.uid ?? "",
+            "token": UserTicketModel.sharedInstance.token ?? "",
+            "shop_id": UserTicketModel.sharedInstance.shop_id ?? "",
+            "order_ids": orderId
+        ]
+        
+        let _ = OrderListModel.shared.orderAddReceiptPrintCount(params) { (result, error) in
+            self.presenter.responseReceiptPrintCount(error: error)
         }
     }
 }

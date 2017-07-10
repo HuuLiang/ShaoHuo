@@ -16,7 +16,7 @@ import EZSwiftExtensions
 final class MessagePresenter: Presenter {
     
     lazy var pageListParam: PageListModel = {
-        return PageListModel(from: "0", last: "0", size: 10, lastPage: false)
+        return PageListModel(from: "0", last: "0", size: 20, lastPage: false)
     }()
     
     var messageList: [PushMessageEntity] = []
@@ -28,6 +28,7 @@ final class MessagePresenter: Presenter {
             pageListParam.last = "0"
             pageListParam.from = "0"
             messageList.removeAll()
+            //view.finishedLoad()
         }
         let _ = self.interactor.getMessageListFormServer(pageListParam: pageListParam)
     }
@@ -45,6 +46,10 @@ final class MessagePresenter: Presenter {
         let _ = self.interactor.delMessage(pn_id: item.pn_id ?? "")
         self.messageList.remove(at: index)
         //view.finishedLoad()
+        
+        if item.read_status == 1 {
+            decreaseBadgeValue()
+        }
     }
     
     func responseMessageList(reslut: [String : AnyObject]?, error: CMCError?) -> Void {
@@ -65,21 +70,25 @@ final class MessagePresenter: Presenter {
         else {
             _view.hidHUDView()
             
-            let listJSONArray = reslut?["list"] as! [[String: AnyObject]]
-            let mapper = Mapper<PushMessageEntity>()
-            let tmpOrderList: [PushMessageEntity] = mapper.mapArray(JSONArray: listJSONArray)!
-            
-            if tmpOrderList.count <= 0 {
-                view.noMoreData()
-            }
-            else {
-                self.messageList.append(contentsOf: tmpOrderList)
-                let lastItem = self.messageList.last
-                self.pageListParam.from = lastItem?.pn_id ?? ""
-                self.pageListParam.last = ""
+            if reslut == nil {
                 view.finishedLoad()
             }
-            //log.info("responseOrderList result :\(reslut)")
+            else {
+                let listJSONArray = reslut?["list"] as! [[String: AnyObject]]
+                let mapper = Mapper<PushMessageEntity>()
+                let tmpOrderList: [PushMessageEntity] = mapper.mapArray(JSONArray: listJSONArray)!
+                
+                if tmpOrderList.count <= 0 {
+                    view.noMoreData()
+                }
+                else {
+                    self.messageList.append(contentsOf: tmpOrderList)
+                    let lastItem = self.messageList.last
+                    self.pageListParam.from = lastItem?.pn_id ?? ""
+                    self.pageListParam.last = ""
+                    view.finishedLoad()
+                }
+            }
         }
     }
     
@@ -118,7 +127,6 @@ final class MessagePresenter: Presenter {
             }
         }
         else {
-            decreaseBadgeValue()
             view.finishedLoad()
         }
     }

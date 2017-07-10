@@ -91,8 +91,11 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/AFNetworking/AFNetworking.framework"
   install_framework "$BUILT_PRODUCTS_DIR/ClusterPrePermissions/ClusterPrePermissions.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/DTCoreText/DTCoreText.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/DTFoundation/DTFoundation.framework"
   install_framework "$BUILT_PRODUCTS_DIR/DZNEmptyDataSet/DZNEmptyDataSet.framework"
   install_framework "$BUILT_PRODUCTS_DIR/DateToolsSwift/DateToolsSwift.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/EFQRCode/EFQRCode.framework"
   install_framework "$BUILT_PRODUCTS_DIR/ESTabBarController-swift/ESTabBarController_swift.framework"
   install_framework "$BUILT_PRODUCTS_DIR/EZSwiftExtensions/EZSwiftExtensions.framework"
   install_framework "$BUILT_PRODUCTS_DIR/IGListKit/IGListKit.framework"
@@ -114,8 +117,11 @@ fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/AFNetworking/AFNetworking.framework"
   install_framework "$BUILT_PRODUCTS_DIR/ClusterPrePermissions/ClusterPrePermissions.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/DTCoreText/DTCoreText.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/DTFoundation/DTFoundation.framework"
   install_framework "$BUILT_PRODUCTS_DIR/DZNEmptyDataSet/DZNEmptyDataSet.framework"
   install_framework "$BUILT_PRODUCTS_DIR/DateToolsSwift/DateToolsSwift.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/EFQRCode/EFQRCode.framework"
   install_framework "$BUILT_PRODUCTS_DIR/ESTabBarController-swift/ESTabBarController_swift.framework"
   install_framework "$BUILT_PRODUCTS_DIR/EZSwiftExtensions/EZSwiftExtensions.framework"
   install_framework "$BUILT_PRODUCTS_DIR/IGListKit/IGListKit.framework"

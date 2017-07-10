@@ -7,12 +7,29 @@
 //
 
 import Foundation
+import ObjectMapper
+
+enum LoginType: Int {
+        case phone = 0
+        case account = 1
+}
 
 struct UserTicketModel {
     
     static var sharedInstance = UserTicketModel()
     fileprivate init() {
         
+    }
+    // 店铺列表
+    var shop_list: [ShopItemEntity] = []
+    // 登录类型
+    var login_type: LoginType {
+        set {
+            UserDefaults.standard.set(newValue.rawValue, forKey: "USER_LOGIN_TYPE")
+        }
+        get {
+            return LoginType(rawValue: UserDefaults.standard.integer(forKey: "USER_LOGIN_TYPE")) ?? .phone
+        }
     }
     
     // 用户编号
@@ -143,6 +160,13 @@ struct UserTicketModel {
     }
     // 退出登录
     func logout() -> Void {
+        
+        if let tmpAlias = alias {
+            UMessage.removeAlias(tmpAlias, type: "ishaohuo") { (result, error) in
+                log.info("responseObject: \(result)")
+            }
+        }
+        
         UserDefaults.standard.removeObject(forKey: "USER_ID")
         UserDefaults.standard.removeObject(forKey: "USER_TOKEN")
         

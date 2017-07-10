@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import EZSwiftExtensions
+import SVProgressHUD
+import ObjectMapper
 
 class DeliveryOrderViewController: UIViewController {
     
@@ -50,6 +53,8 @@ class DeliveryOrderViewController: UIViewController {
     //var cancelShippingTypeCallback: ((Void) -> Void)?
     
     var currentSelectedIndex: Int = 0
+    
+    var orderId: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -196,7 +201,7 @@ class DeliveryOrderViewController: UIViewController {
             return
         }
         
-        let _ = self.navigationController?.popViewController(animated: true)
+        //let _ = self.navigationController?.popViewController(animated: true)
         
         let itemDict = shippingList[self.currentSelectedIndex]
         
@@ -207,13 +212,100 @@ class DeliveryOrderViewController: UIViewController {
         }
         
         if shippingType == ORDER_SHIPPING_TYPE_SH || shippingType == ORDER_SHIPPING_TYPE_SELF {
-            self.selectedShippingTypeCallback?(shippingType!, title, "")
+            //self.selectedShippingTypeCallback?(shippingType!, title, "")
+            
+            let _ = self.deliveryOrder(orderId: orderId,
+                               shipping_type: shippingType!,
+                               express_name: title,
+                               shipping_id: "")
         }
         else {
-            self.selectedShippingTypeCallback?(shippingType!,
-                                              self.otherExpressNameTextField.text ?? "",
-                                              self.otherExpressSNTextField.text ?? "")
+            //elf.selectedShippingTypeCallback?(shippingType!,
+//                                              self.otherExpressNameTextField.text ?? "",
+//                                              self.otherExpressSNTextField.text ?? "")
+            
+            let _ = self.deliveryOrder(orderId: orderId,
+                          shipping_type: shippingType!,
+                          express_name: self.otherExpressNameTextField.text ?? "",
+                          shipping_id: self.otherExpressSNTextField.text ?? "")
+
         }
+    }
+    
+    func deliveryOrder(orderId: String, shipping_type: Int, express_name: String, shipping_id: String) -> URLSessionDataTask? {
+        
+        func sendShipping() {
+            let params = [
+                "ad_uid": UserTicketModel.sharedInstance.uid ?? "",
+                "token": UserTicketModel.sharedInstance.token ?? "",
+                "order_id": orderId,
+                "shipping_type": "\(shipping_type)",
+                "shop_id": UserTicketModel.sharedInstance.shop_id ?? "",
+                "express_name": express_name,
+                "shipping_id": shipping_id
+            ]
+            
+            
+            SVProgressHUD.show(withStatus: "加载中...")
+            
+            let _ = OrderListModel.shared.orderDelivery(params) { (result, error) in
+                if let tmpError = error {
+                    switch tmpError {
+                    case .jsonSerializedFailed, .verifyTextFieldError(_):
+                        
+                        //SVProgressHUD.show(withStatus: "加载中...")
+                        SVProgressHUD.showError(withStatus: "加载数据失败")
+                    //self.showErrorHUDView(errorString: "加载数据失败")
+                    case .responseError(let code, let message):
+                        
+                        if self.checkErrorCode(code: code) {
+                            //self.hidHUDView()
+                            SVProgressHUD.dismiss()
+                        }
+                        else {
+                            //self.showErrorHUDView(errorString: message, code: code)
+                            SVProgressHUD.showError(withStatus: message)
+                        }
+                    }
+                }
+                else {
+                    
+                    SVProgressHUD.showSuccess(withStatus: "发货成功")
+                    
+                    if let orderJson = result?["order"] as? [String : Any] {
+                        let mapper = Mapper<OrderDetailItemEntity>()
+                        let orderEntity = mapper.map(JSON: orderJson)
+                        
+                        GPrintHelp.shared.printReceipt(orderDetail: orderEntity!)
+                    }
+                    
+                    ez.runThisAfterDelay(seconds: 1.5, after: {
+                        [weak self] in
+                        //self?.view.needReloadOrderList()
+                        let _ = self?.navigationController?.popViewController(animated: true)
+                    })
+                }
+            }
+        }
+        
+        if GPrintHelp.shared.isConnecting == false {
+            
+            let alert = UIAlertController(title: "提示",
+                                          message: "打印机连接失败，请打开手机蓝牙，然后在 \"我的->打印机设置\" 中连接打印设备",
+                                          preferredStyle: UIAlertControllerStyle.alert)
+            
+            alert.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: "继续发货", style: UIAlertActionStyle.default, handler: { (alertController) in
+                sendShipping()
+            }))
+            
+            self.navigationController?.presentVC(alert)
+        }
+        else {
+            sendShipping()
+        }
+        
+        return nil
     }
     
 }

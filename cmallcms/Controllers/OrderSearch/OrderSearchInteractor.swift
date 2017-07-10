@@ -24,6 +24,7 @@ final class OrderSearchInteractor: Interactor {
         let params = [
             "ad_uid": UserTicketModel.sharedInstance.uid ?? "",
             "token": UserTicketModel.sharedInstance.token ?? "",
+            "shop_id": UserTicketModel.sharedInstance.shop_id ?? "",
             "status": "\(status)",
             "search_text": searchText,
             "size": "\(pageListParam.size)",
@@ -41,6 +42,7 @@ final class OrderSearchInteractor: Interactor {
         let params = [
             "ad_uid": UserTicketModel.sharedInstance.uid ?? "",
             "token": UserTicketModel.sharedInstance.token ?? "",
+            "shop_id": UserTicketModel.sharedInstance.shop_id ?? "",
             "order_id": orderId
         ]
         
@@ -56,6 +58,7 @@ final class OrderSearchInteractor: Interactor {
             "token": UserTicketModel.sharedInstance.token ?? "",
             "order_id": orderId,
             "shipping_type": "\(shipping_type)",
+            "shop_id": UserTicketModel.sharedInstance.shop_id ?? "",
             "express_name": express_name,
             "shipping_id": shipping_id
         ]
@@ -70,6 +73,7 @@ final class OrderSearchInteractor: Interactor {
         let params = [
             "ad_uid": UserTicketModel.sharedInstance.uid ?? "",
             "token": UserTicketModel.sharedInstance.token ?? "",
+            "shop_id": UserTicketModel.sharedInstance.shop_id ?? "",
             "order_id": orderId,
             ]
         

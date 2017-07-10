@@ -8,6 +8,7 @@
 
 import Foundation
 import EZSwiftExtensions
+import ObjectMapper
 //import Viperit
 
 final class HomeInteractor: Interactor {
@@ -29,6 +30,7 @@ final class HomeInteractor: Interactor {
                 "size": "\(pageListParam.size)",
                 "from": pageListParam.from,
                 "is_support": status == 6 ? "1" : "0",
+                "shop_id": UserTicketModel.sharedInstance.shop_id ?? "",
                 "last": pageListParam.last
                       ]
         
@@ -41,6 +43,7 @@ final class HomeInteractor: Interactor {
         let params = [
             "ad_uid": UserTicketModel.sharedInstance.uid ?? "",
             "token": UserTicketModel.sharedInstance.token ?? "",
+            "shop_id": UserTicketModel.sharedInstance.shop_id ?? "",
             "order_id": orderId
         ]
         
@@ -56,6 +59,7 @@ final class HomeInteractor: Interactor {
             "token": UserTicketModel.sharedInstance.token ?? "",
             "order_id": orderId,
             "shipping_type": "\(shipping_type)",
+            "shop_id": UserTicketModel.sharedInstance.shop_id ?? "",
             "express_name": express_name,
             "shipping_id": shipping_id
         ]
@@ -98,11 +102,94 @@ final class HomeInteractor: Interactor {
         let params = [
             "ad_uid": UserTicketModel.sharedInstance.uid ?? "",
             "token": UserTicketModel.sharedInstance.token ?? "",
+            "shop_id": UserTicketModel.sharedInstance.shop_id ?? "",
             "order_id": orderId,
         ]
         
         OrderListModel.shared.orderShippingList(params: params) { (result, error) in
             self.presenter.responseOrderShippingList(result: result, error: error)
+        }
+    }
+    
+    func getShopListFromServer() -> Void {
+        let params = [
+            "phone": UserTicketModel.sharedInstance.mobile_phone ?? "",
+            "ad_uid": UserTicketModel.sharedInstance.uid ?? "",
+            "token": UserTicketModel.sharedInstance.token ?? "",
+            "size": "20",
+            "from": "",
+            "last": ""
+        ]
+        
+        let _ = UserLoginModel.shared.userShopLists(params) { (result, error) in
+            if let tmpError = error {
+                log.error("\(tmpError.localizedDescription)")
+                
+                self.presenter.responseShopList(error: error)
+            }
+            else {
+                
+                let listJSONArray = result?["list"] as! [[String: AnyObject]]
+                let mapper = Mapper<ShopItemEntity>()
+                let tmpOrderList: [ShopItemEntity] = mapper.mapArray(JSONArray: listJSONArray)!
+                
+                UserTicketModel.sharedInstance.shop_list.removeAll()
+                
+                UserTicketModel.sharedInstance.shop_list.append(contentsOf: tmpOrderList)
+                
+                self.presenter.responseShopList(error: nil)
+            }
+        }
+    }
+    
+    /// 批量发货
+    func batchShippingOrderFromServer(orderIds: [String], shippingType: Int = ORDER_SHIPPING_TYPE_SELF) -> URLSessionDataTask? {
+       
+        let orderIdsString = orderIds.joined(separator: ",")
+        
+        let params = [
+            "ad_uid": UserTicketModel.sharedInstance.uid ?? "",
+            "token": UserTicketModel.sharedInstance.token ?? "",
+            "shop_id": UserTicketModel.sharedInstance.shop_id ?? "",
+            "order_ids": orderIdsString,
+            "shipping_type": "\(shippingType)"
+        ]
+        
+        return OrderListModel.shared.orderBatchDelivery(params) { (result, error) in
+            self.presenter.responseBatchShippingOrder(result: result, error: error)
+        }
+        
+    }
+    
+    /// 增加打印次数
+    ///
+    /// - Parameter orderId: 订单号
+    func addReceiptPrintCount(orderId: String) {
+        
+        let params = [
+            "ad_uid": UserTicketModel.sharedInstance.uid ?? "",
+            "token": UserTicketModel.sharedInstance.token ?? "",
+            "shop_id": UserTicketModel.sharedInstance.shop_id ?? "",
+            "order_ids": orderId
+        ]
+        
+        let _ = OrderListModel.shared.orderAddReceiptPrintCount(params) { (result, error) in
+            self.presenter.responseReceiptPrintCount(error: error)
+        }
+    }
+    
+    func getOrderDetailFromServer(orderId: String) -> URLSessionDataTask? {
+        
+        let params = [
+            "ad_uid": UserTicketModel.sharedInstance.uid ?? "",
+            "token": UserTicketModel.sharedInstance.token ?? "",
+            "shop_id": UserTicketModel.sharedInstance.shop_id ?? "",
+            "order_id": orderId
+        ]
+        
+        return OrderListModel.shared.orderDetail(params) {
+            [weak self] (dicData, error) in
+            self?.presenter.responseOrderDetail(result: dicData, error: error)
         }
     }
 }

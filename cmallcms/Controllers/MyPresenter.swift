@@ -10,8 +10,27 @@ import Foundation
 import MBProgressHUD
 import EZSwiftExtensions
 
+public struct ShopInfoKey {
+    static let business_time = "business_time"
+    static let logo = "logo"
+    static let mobile_phone = "mobile_phone"
+    static let shop_address = "shop_address"
+    static let shop_id = "shop_id"
+    static let shop_name = "shop_name"
+    static let fqa_url = "fqa_url"
+    static let chart_url = "chart_url"
+}
+
 final class MyPresenter: Presenter {
-    
+    /*
+        business_time
+        logo
+        mobile_phone
+        shop_address
+        shop_id
+        shop_name
+        fqa_url
+     */
     var shopInfo: [String : AnyObject]?
     
     func getUserShopInfo() {
@@ -19,6 +38,7 @@ final class MyPresenter: Presenter {
         let _ = _view.showHUDLoadView()
         
         self.interactor.getUserShopInfoFromServer()
+        
     }
     
     func responseShopInfo(result: [String : AnyObject]?, error: CMCError?) {

@@ -16,7 +16,25 @@ PODS:
     - AFNetworking/NSURLSession
   - ClusterPrePermissions (0.8.1)
   - DateToolsSwift (2.0.3)
+  - DTCoreText (1.6.20):
+    - DTCoreText/Core (= 1.6.20)
+    - DTFoundation/Core (~> 1.7.5)
+    - DTFoundation/DTAnimatedGIF (~> 1.7.5)
+    - DTFoundation/DTHTMLParser (~> 1.7.5)
+    - DTFoundation/UIKit (~> 1.7.5)
+  - DTCoreText/Core (1.6.20):
+    - DTFoundation/Core (~> 1.7.5)
+    - DTFoundation/DTAnimatedGIF (~> 1.7.5)
+    - DTFoundation/DTHTMLParser (~> 1.7.5)
+    - DTFoundation/UIKit (~> 1.7.5)
+  - DTFoundation/Core (1.7.12)
+  - DTFoundation/DTAnimatedGIF (1.7.12)
+  - DTFoundation/DTHTMLParser (1.7.12):
+    - DTFoundation/Core
+  - DTFoundation/UIKit (1.7.12):
+    - DTFoundation/Core
   - DZNEmptyDataSet (1.8.1)
+  - EFQRCode (1.2.5)
   - ESTabBarController-swift (2.4)
   - EZSwiftExtensions (1.9)
   - IGListKit (3.0.0):
@@ -51,7 +69,9 @@ DEPENDENCIES:
   - AFNetworking (~> 3.1.0)
   - ClusterPrePermissions (~> 0.1)
   - DateToolsSwift
+  - DTCoreText (~> 1.6.20)
   - DZNEmptyDataSet
+  - EFQRCode (~> 1.2.5)
   - ESTabBarController-swift
   - EZSwiftExtensions
   - IGListKit (~> 3.0)
@@ -74,7 +94,10 @@ SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   ClusterPrePermissions: 168c127a658e423062550dd9c56fe26042a58bce
   DateToolsSwift: bf69bf9056d9e53c5c03f06e51f219b9b8b02f9e
+  DTCoreText: 51904f2374af443e0d270d6fdc76035ab6f9ef8a
+  DTFoundation: 26a164ef510877387906fb92bff524a792db4bf8
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
+  EFQRCode: 96834a369f74d14b8be882cfe6f27f00cd4cad18
   ESTabBarController-swift: af496895039ba10ae60bf825473c45f23fc5c8b6
   EZSwiftExtensions: ce22bf6fc5c6e7c883fec413300b006e123735d0
   IGListKit: 9eab6856a15fa25ad72018ff9d9eb2178c240fff
@@ -94,6 +117,6 @@ SPEC CHECKSUMS:
   WebViewJavascriptBridge: a4390df79bf622fc068dd035c8b5f67590c0ba05
   XCGLogger: 0b43697155d41e4a1b15fc776f319c2141646b09
 
-PODFILE CHECKSUM: d94d9ad0d0894347095824fdaba381b621b53a5d
+PODFILE CHECKSUM: 753a2fc16e12faad3e818620304ae0609254568b
 
 COCOAPODS: 1.2.0
