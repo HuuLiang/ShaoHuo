@@ -1,0 +1,245 @@
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTFoundation/Core/Source
+END
+DTFoundationConstants.h
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTFoundation/Core/Source/DTFoundationConstants.h
+END
+NSArray+DTError.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTFoundation/Core/Source/NSArray+DTError.h
+END
+DTExtendedFileAttributes.h
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTFoundation/Core/Source/DTExtendedFileAttributes.h
+END
+DTFoundationConstants.m
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTFoundation/Core/Source/DTFoundationConstants.m
+END
+NSArray+DTError.m
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTFoundation/Core/Source/NSArray+DTError.m
+END
+DTExtendedFileAttributes.m
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTFoundation/Core/Source/DTExtendedFileAttributes.m
+END
+NSString+DTURLEncoding.h
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTFoundation/Core/Source/NSString+DTURLEncoding.h
+END
+NSString+DTUtilities.h
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTFoundation/Core/Source/NSString+DTUtilities.h
+END
+NSString+DTURLEncoding.m
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTFoundation/Core/Source/NSString+DTURLEncoding.m
+END
+NSString+DTPaths.h
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTFoundation/Core/Source/NSString+DTPaths.h
+END
+NSString+DTUtilities.m
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTFoundation/Core/Source/NSString+DTUtilities.m
+END
+DTWeakSupport.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTFoundation/Core/Source/DTWeakSupport.h
+END
+NSURL+DTUnshorten.h
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTFoundation/Core/Source/NSURL+DTUnshorten.h
+END
+NSFileWrapper+DTCopying.h
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTFoundation/Core/Source/NSFileWrapper+DTCopying.h
+END
+NSData+DTCrypto.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTFoundation/Core/Source/NSData+DTCrypto.h
+END
+NSString+DTFormatNumbers.h
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTFoundation/Core/Source/NSString+DTFormatNumbers.h
+END
+NSString+DTPaths.m
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTFoundation/Core/Source/NSString+DTPaths.m
+END
+NSURL+DTUnshorten.m
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTFoundation/Core/Source/NSURL+DTUnshorten.m
+END
+NSFileWrapper+DTCopying.m
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTFoundation/Core/Source/NSFileWrapper+DTCopying.m
+END
+NSDictionary+DTError.h
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTFoundation/Core/Source/NSDictionary+DTError.h
+END
+NSData+DTCrypto.m
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTFoundation/Core/Source/NSData+DTCrypto.m
+END
+NSString+DTFormatNumbers.m
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTFoundation/Core/Source/NSString+DTFormatNumbers.m
+END
+NSDictionary+DTError.m
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTFoundation/Core/Source/NSDictionary+DTError.m
+END
+DTBase64Coding.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTFoundation/Core/Source/DTBase64Coding.h
+END
+DTCompatibility.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTFoundation/Core/Source/DTCompatibility.h
+END
+DTBase64Coding.m
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTFoundation/Core/Source/DTBase64Coding.m
+END
+NSURL+DTComparing.h
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTFoundation/Core/Source/NSURL+DTComparing.h
+END
+DTLog.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTFoundation/Core/Source/DTLog.h
+END
+DTBlockFunctions.h
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTFoundation/Core/Source/DTBlockFunctions.h
+END
+DTFolderMonitor.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTFoundation/Core/Source/DTFolderMonitor.h
+END
+NSURL+DTComparing.m
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTFoundation/Core/Source/NSURL+DTComparing.m
+END
+NSMutableArray+DTMoving.h
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTFoundation/Core/Source/NSMutableArray+DTMoving.h
+END
+DTVersion.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTFoundation/Core/Source/DTVersion.h
+END
+DTLog.m
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTFoundation/Core/Source/DTLog.m
+END
+DTBlockFunctions.m
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTFoundation/Core/Source/DTBlockFunctions.m
+END
+DTFolderMonitor.m
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTFoundation/Core/Source/DTFolderMonitor.m
+END
+NSMutableArray+DTMoving.m
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTFoundation/Core/Source/NSMutableArray+DTMoving.m
+END
+DTVersion.m
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTFoundation/Core/Source/DTVersion.m
+END
+DTCoreGraphicsUtils.h
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTFoundation/Core/Source/DTCoreGraphicsUtils.h
+END
+DTCoreGraphicsUtils.m
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTFoundation/Core/Source/DTCoreGraphicsUtils.m
+END

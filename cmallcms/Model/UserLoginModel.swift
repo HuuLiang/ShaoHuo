@@ -43,14 +43,14 @@ class UserLoginModel: NSObject {
     // 登录
     func login(_ params: [String: String], complete: @escaping (_ result:[String : AnyObject]?, _ error: CMCError?) -> Void) -> Void {
         let versionParams = NSMutableDictionary(dictionary: params).buildVersionParams()
-        log.info("versionParams: \(versionParams)")
+        log.info("versionParams: \(String(describing: versionParams))")
         
         CMCRequestManager.sharedClient().post("user/login", parameters: versionParams, progress: nil, success: { (sessionTask, responseData) in
             
             let responseDic = try? JSONSerialization.jsonObject(with: responseData as! Data,
                                                                 options: .allowFragments)
             
-            log.info("responseDic:\(responseDic)")
+            log.info("responseDic:\(String(describing: responseDic))")
             
             if responseDic == nil {
                 complete(nil, CMCError.jsonSerializedFailed)

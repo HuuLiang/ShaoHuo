@@ -198,10 +198,14 @@ class GPrintHelp: NSObject {
         default:
             printText(text: "\(province_name)\(city_name)\(district_name)\(address)", feedLines: 2, justfication: 0, charcterSize: 0x22)
         }
-        // 收件人
+        
+      
+            // 收件人
         printText(text: orderDetail.consignee ?? "", feedLines: 2, justfication: 0, charcterSize: 0)
-        // 手机号
+            // 手机号
         printText(text: orderDetail.mobile ?? "", feedLines: 2, justfication: 0, charcterSize: 0)
+        
+        
         
         printQrcode(qrurl: orderDetail.qr_url ?? "")
     }

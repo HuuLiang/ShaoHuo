@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/XCGLogger/Sources/XCGLogger/Destinations
+END
+ConsoleDestination.swift
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/XCGLogger/Sources/XCGLogger/Destinations/ConsoleDestination.swift
+END
+BaseQueuedDestination.swift
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/XCGLogger/Sources/XCGLogger/Destinations/BaseQueuedDestination.swift
+END
+AppleSystemLogDestination.swift
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/XCGLogger/Sources/XCGLogger/Destinations/AppleSystemLogDestination.swift
+END
+BaseDestination.swift
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/XCGLogger/Sources/XCGLogger/Destinations/BaseDestination.swift
+END
+FileDestination.swift
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/XCGLogger/Sources/XCGLogger/Destinations/FileDestination.swift
+END
+TestDestination.swift
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/XCGLogger/Sources/XCGLogger/Destinations/TestDestination.swift
+END
+AutoRotatingFileDestination.swift
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/XCGLogger/Sources/XCGLogger/Destinations/AutoRotatingFileDestination.swift
+END
+DestinationProtocol.swift
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/XCGLogger/Sources/XCGLogger/Destinations/DestinationProtocol.swift
+END

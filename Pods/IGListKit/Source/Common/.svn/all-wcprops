@@ -1,0 +1,137 @@
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/IGListKit/Source/Common
+END
+IGListBatchUpdateData.h
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/IGListKit/Source/Common/IGListBatchUpdateData.h
+END
+IGListDiffKit.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/IGListKit/Source/Common/IGListDiffKit.h
+END
+IGListMoveIndexPath.m
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/IGListKit/Source/Common/IGListMoveIndexPath.m
+END
+NSNumber+IGListDiffable.h
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/IGListKit/Source/Common/NSNumber+IGListDiffable.h
+END
+IGListIndexSetResult.h
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/IGListKit/Source/Common/IGListIndexSetResult.h
+END
+IGListIndexPathResult.h
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/IGListKit/Source/Common/IGListIndexPathResult.h
+END
+IGListMacros.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/IGListKit/Source/Common/IGListMacros.h
+END
+NSNumber+IGListDiffable.m
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/IGListKit/Source/Common/NSNumber+IGListDiffable.m
+END
+IGListIndexSetResult.m
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/IGListKit/Source/Common/IGListIndexSetResult.m
+END
+IGListIndexPathResult.m
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/IGListKit/Source/Common/IGListIndexPathResult.m
+END
+IGListDiff.mm
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/IGListKit/Source/Common/IGListDiff.mm
+END
+IGListDiffable.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/IGListKit/Source/Common/IGListDiffable.h
+END
+IGListMoveIndex.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/IGListKit/Source/Common/IGListMoveIndex.h
+END
+NSString+IGListDiffable.h
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/IGListKit/Source/Common/NSString+IGListDiffable.h
+END
+IGListBatchUpdateData.mm
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/IGListKit/Source/Common/IGListBatchUpdateData.mm
+END
+IGListAssert.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/IGListKit/Source/Common/IGListAssert.h
+END
+IGListMoveIndex.m
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/IGListKit/Source/Common/IGListMoveIndex.m
+END
+IGListExperiments.h
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/IGListKit/Source/Common/IGListExperiments.h
+END
+NSString+IGListDiffable.m
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/IGListKit/Source/Common/NSString+IGListDiffable.m
+END
+IGListDiff.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/IGListKit/Source/Common/IGListDiff.h
+END
+IGListCompatibility.h
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/IGListKit/Source/Common/IGListCompatibility.h
+END
+IGListMoveIndexPath.h
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/IGListKit/Source/Common/IGListMoveIndexPath.h
+END

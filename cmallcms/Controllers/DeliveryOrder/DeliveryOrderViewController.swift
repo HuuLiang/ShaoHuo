@@ -133,8 +133,8 @@ class DeliveryOrderViewController: UIViewController {
                 delay += 0.3
                 orignX += self.shaohuoShippingView.h + 14
             }
-            // 自提
-            else if shippingType == ORDER_SHIPPING_TYPE_SELF {
+            // 自提或者堂食
+            else if shippingType == ORDER_SHIPPING_TYPE_SELF || shippingType == ORDER_SHIPPING_TYPE_TS{
                 
                 self.shippingSelfButton.setTitle(title, for: UIControlState.normal)
                 self.shippingSelfButton.setTitle(title, for: UIControlState.selected)
@@ -275,7 +275,7 @@ class DeliveryOrderViewController: UIViewController {
                     if let orderJson = result?["order"] as? [String : Any] {
                         let mapper = Mapper<OrderDetailItemEntity>()
                         let orderEntity = mapper.map(JSON: orderJson)
-                        
+                     
                         GPrintHelp.shared.printReceipt(orderDetail: orderEntity!)
                     }
                     

@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/Target%20Support%20Files/DTCoreText
+END
+DTCoreText.xcconfig
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/Target%20Support%20Files/DTCoreText/DTCoreText.xcconfig
+END
+Info.plist
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/Target%20Support%20Files/DTCoreText/Info.plist
+END
+DTCoreText.modulemap
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/Target%20Support%20Files/DTCoreText/DTCoreText.modulemap
+END
+DTCoreText-dummy.m
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/Target%20Support%20Files/DTCoreText/DTCoreText-dummy.m
+END
+DTCoreText-prefix.pch
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/Target%20Support%20Files/DTCoreText/DTCoreText-prefix.pch
+END
+DTCoreText-umbrella.h
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/Target%20Support%20Files/DTCoreText/DTCoreText-umbrella.h
+END

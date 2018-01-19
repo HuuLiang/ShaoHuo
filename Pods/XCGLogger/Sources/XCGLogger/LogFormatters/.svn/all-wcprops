@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/XCGLogger/Sources/XCGLogger/LogFormatters
+END
+LogFormatterProtocol.swift
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/XCGLogger/Sources/XCGLogger/LogFormatters/LogFormatterProtocol.swift
+END
+PrePostFixLogFormatter.swift
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/XCGLogger/Sources/XCGLogger/LogFormatters/PrePostFixLogFormatter.swift
+END
+Base64LogFormatter.swift
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/XCGLogger/Sources/XCGLogger/LogFormatters/Base64LogFormatter.swift
+END
+XcodeColorsLogFormatter.swift
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/XCGLogger/Sources/XCGLogger/LogFormatters/XcodeColorsLogFormatter.swift
+END
+ANSIColorLogFormatter.swift
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/XCGLogger/Sources/XCGLogger/LogFormatters/ANSIColorLogFormatter.swift
+END

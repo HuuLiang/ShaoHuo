@@ -139,13 +139,13 @@ class OrderListModel: NSObject {
     func orderDelivery(_ params: [String: String], complete: @escaping (_ result:[String : AnyObject]?, _ error: CMCError?) -> Void) -> URLSessionDataTask? {
         
         let versionParams = NSMutableDictionary(dictionary: params).buildVersionParams()
-        log.info("versionParams: \(versionParams)")
+        log.info("versionParams: \(String(describing: versionParams))")
         
         return CMCRequestManager.sharedClient().post("order/delivery", parameters: versionParams, progress: nil, success: { (sessionTask, responseData) in
             
             let responseDic = try? JSONSerialization.jsonObject(with: responseData as! Data,
                                                                 options: .allowFragments)
-            log.info("orderDelivery responseDic: \(responseDic)")
+            log.info("orderDelivery responseDic: \(String(describing: responseDic))")
             if responseDic == nil {
                 complete(nil, CMCError.jsonSerializedFailed)
             }
@@ -169,13 +169,13 @@ class OrderListModel: NSObject {
     func orderShippingList(params: [String: String], complete: @escaping (_ result:[String : AnyObject]?, _ error: CMCError?) -> Void) -> URLSessionDataTask? {
         
         let versionParams = NSMutableDictionary(dictionary: params).buildVersionParams()
-        log.info("versionParams: \(versionParams)")
+        log.info("versionParams: \(String(describing: versionParams))")
         
         return CMCRequestManager.sharedClient().post("order/shippingList", parameters: versionParams, progress: nil, success: { (sessionTask, responseData) in
             
             let responseDic = try? JSONSerialization.jsonObject(with: responseData as! Data,
                                                                 options: .allowFragments)
-            log.info("orderShippingList responseDic: \(responseDic)")
+            log.info("orderShippingList responseDic: \(String(describing: responseDic))")
             if responseDic == nil {
                 complete(nil, CMCError.jsonSerializedFailed)
             }

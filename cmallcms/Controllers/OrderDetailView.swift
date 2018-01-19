@@ -188,7 +188,10 @@ final class OrderDetailView: UserInterface {
         }
         
         if title == "联系买家" {
-            let phoneNumber = self.presenter.orderEntity?.order?.mobile ?? ""
+            var phoneNumber = self.presenter.orderEntity?.order?.mobile ?? ""
+            if self.presenter.orderEntity?.order?.shipping_type == 5 {
+              phoneNumber = self.presenter.orderEntity?.order?.make_order_phone ?? ""
+            }
             self.showPhonePickView(phoneNumber)
         }
     }
@@ -333,7 +336,8 @@ private extension OrderDetailView {
     func configOrderReceiveTableViewCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let tmpCell = tableView.dequeueReusableCell(withIdentifier: OrderReceiveTableViewCell.className,
                                                     for: indexPath) as! OrderReceiveTableViewCell
-        
+
+        //显示电话号码和地址
         let province_name = self.presenter.orderEntity?.order?.province_name ?? ""
         let city_name = self.presenter.orderEntity?.order?.city_name ?? ""
         let district_name = self.presenter.orderEntity?.order?.district_name ?? ""
@@ -342,6 +346,7 @@ private extension OrderDetailView {
         tmpCell.nameLabel.text = self.presenter.orderEntity?.order?.consignee ?? ""
         tmpCell.phoneNumberLabel.text = self.presenter.orderEntity?.order?.mobile ?? ""
         tmpCell.addressLabel.text = "\(province_name)\(city_name)\(district_name)\(address)"
+
         return tmpCell
     }
     
@@ -444,7 +449,9 @@ extension OrderDetailView : UITableViewDataSource, UITableViewDelegate {
             return 38
         }
         if indexPath.section == 1 {
-            return 100
+            self.tableView?.rowHeight = UITableViewAutomaticDimension
+            self.tableView?.estimatedRowHeight = 100
+            return tableView.rowHeight
         }
         if indexPath.section == 2 {
             if self.presenter.needShowActionButton() {

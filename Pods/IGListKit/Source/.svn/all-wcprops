@@ -1,0 +1,197 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/IGListKit/Source
+END
+IGListSectionController.m
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/IGListKit/Source/IGListSectionController.m
+END
+IGListBindingSectionControllerDataSource.h
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/IGListKit/Source/IGListBindingSectionControllerDataSource.h
+END
+IGListSingleSectionController.m
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/IGListKit/Source/IGListSingleSectionController.m
+END
+IGListKit.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/IGListKit/Source/IGListKit.h
+END
+IGListScrollDelegate.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/IGListKit/Source/IGListScrollDelegate.h
+END
+IGListDisplayDelegate.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/IGListKit/Source/IGListDisplayDelegate.h
+END
+IGListAdapterUpdaterDelegate.h
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/IGListKit/Source/IGListAdapterUpdaterDelegate.h
+END
+IGListAdapterUpdater.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/IGListKit/Source/IGListAdapterUpdater.h
+END
+IGListUpdatingDelegate.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/IGListKit/Source/IGListUpdatingDelegate.h
+END
+IGListCollectionViewLayout.mm
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/IGListKit/Source/IGListCollectionViewLayout.mm
+END
+IGListStackedSectionController.h
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/IGListKit/Source/IGListStackedSectionController.h
+END
+IGListAdapterUpdater.m
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/IGListKit/Source/IGListAdapterUpdater.m
+END
+IGListAdapterDelegate.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/IGListKit/Source/IGListAdapterDelegate.h
+END
+IGListStackedSectionController.m
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/IGListKit/Source/IGListStackedSectionController.m
+END
+IGListAdapter.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/IGListKit/Source/IGListAdapter.h
+END
+IGListSupplementaryViewSource.h
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/IGListKit/Source/IGListSupplementaryViewSource.h
+END
+IGListCollectionViewLayout.h
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/IGListKit/Source/IGListCollectionViewLayout.h
+END
+IGListReloadDataUpdater.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/IGListKit/Source/IGListReloadDataUpdater.h
+END
+IGListAdapter.m
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/IGListKit/Source/IGListAdapter.m
+END
+IGListBatchContext.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/IGListKit/Source/IGListBatchContext.h
+END
+IGListWorkingRangeDelegate.h
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/IGListKit/Source/IGListWorkingRangeDelegate.h
+END
+IGListReloadDataUpdater.m
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/IGListKit/Source/IGListReloadDataUpdater.m
+END
+IGListAdapterDataSource.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/IGListKit/Source/IGListAdapterDataSource.h
+END
+IGListBindable.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/IGListKit/Source/IGListBindable.h
+END
+IGListCollectionContext.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/IGListKit/Source/IGListCollectionContext.h
+END
+IGListBindingSectionController.h
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/IGListKit/Source/IGListBindingSectionController.h
+END
+IGListBindingSectionControllerSelectionDelegate.h
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/IGListKit/Source/IGListBindingSectionControllerSelectionDelegate.h
+END
+IGListGenericSectionController.h
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/IGListKit/Source/IGListGenericSectionController.h
+END
+IGListSectionController.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/IGListKit/Source/IGListSectionController.h
+END
+IGListBindingSectionController.m
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/IGListKit/Source/IGListBindingSectionController.m
+END
+IGListGenericSectionController.m
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/IGListKit/Source/IGListGenericSectionController.m
+END
+IGListSingleSectionController.h
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/IGListKit/Source/IGListSingleSectionController.h
+END

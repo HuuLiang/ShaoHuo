@@ -90,7 +90,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
         
-        UMessage.setAutoAlert(false)
+//        UMessage.setAutoAlert(false)
         UMessage.didReceiveRemoteNotification(userInfo)
         
         log.info("remoteNotificaton: \(userInfo)")

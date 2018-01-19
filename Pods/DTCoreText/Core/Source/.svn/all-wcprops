@@ -1,0 +1,773 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source
+END
+DTAccessibilityElement.h
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTAccessibilityElement.h
+END
+DTAttributedTextContentView.h
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTAttributedTextContentView.h
+END
+DTCoreTextFontCollection.m
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTCoreTextFontCollection.m
+END
+DTAccessibilityElement.m
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTAccessibilityElement.m
+END
+CTLineUtils.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/CTLineUtils.h
+END
+DTAttributedTextContentView.m
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTAttributedTextContentView.m
+END
+CTLineUtils.m
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/CTLineUtils.m
+END
+NSString+HTML.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/NSString+HTML.h
+END
+NSString+HTML.m
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/NSString+HTML.m
+END
+DTHTMLParserNode.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTHTMLParserNode.h
+END
+DTLinkButton.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTLinkButton.h
+END
+DTCoreTextConstants.h
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTCoreTextConstants.h
+END
+DTHTMLParserNode.m
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTHTMLParserNode.m
+END
+DTLinkButton.m
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTLinkButton.m
+END
+DTCoreTextConstants.m
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTCoreTextConstants.m
+END
+DTImageTextAttachment.h
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTImageTextAttachment.h
+END
+DTImageTextAttachment.m
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTImageTextAttachment.m
+END
+DTCSSListStyle.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTCSSListStyle.h
+END
+DTAttributedLabel.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTAttributedLabel.h
+END
+DTCSSListStyle.m
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTCSSListStyle.m
+END
+DTAttributedLabel.m
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTAttributedLabel.m
+END
+DTLazyImageView.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTLazyImageView.h
+END
+DTLazyImageView.m
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTLazyImageView.m
+END
+NSMutableString+HTML.h
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/NSMutableString+HTML.h
+END
+DTHTMLParserTextNode.h
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTHTMLParserTextNode.h
+END
+NSMutableString+HTML.m
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/NSMutableString+HTML.m
+END
+NSDictionary+DTCoreText.h
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/NSDictionary+DTCoreText.h
+END
+DTHTMLParserTextNode.m
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTHTMLParserTextNode.m
+END
+NSDictionary+DTCoreText.m
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/NSDictionary+DTCoreText.m
+END
+DTAttributedTextCell.h
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTAttributedTextCell.h
+END
+DTDictationPlaceholderView.h
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTDictationPlaceholderView.h
+END
+NSNumber+RomanNumerals.h
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/NSNumber+RomanNumerals.h
+END
+NSMutableAttributedString+HTML.h
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/NSMutableAttributedString+HTML.h
+END
+DTIframeTextAttachment.h
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTIframeTextAttachment.h
+END
+DTAttributedTextCell.m
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTAttributedTextCell.m
+END
+DTDictationPlaceholderView.m
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTDictationPlaceholderView.m
+END
+DTTextHTMLElement.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTTextHTMLElement.h
+END
+NSNumber+RomanNumerals.m
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/NSNumber+RomanNumerals.m
+END
+NSMutableAttributedString+HTML.m
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/NSMutableAttributedString+HTML.m
+END
+DTIframeTextAttachment.m
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTIframeTextAttachment.m
+END
+DTTextHTMLElement.m
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTTextHTMLElement.m
+END
+DTTextAttachmentHTMLElement.h
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTTextAttachmentHTMLElement.h
+END
+DTCoreTextLayoutFrameAccessibilityElementGenerator.h
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTCoreTextLayoutFrameAccessibilityElementGenerator.h
+END
+DTTextAttachmentHTMLElement.m
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTTextAttachmentHTMLElement.m
+END
+DTHTMLWriter.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTHTMLWriter.h
+END
+DTCSSStylesheet.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTCSSStylesheet.h
+END
+DTCoreTextLayoutFrameAccessibilityElementGenerator.m
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTCoreTextLayoutFrameAccessibilityElementGenerator.m
+END
+DTCoreTextParagraphStyle.h
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTCoreTextParagraphStyle.h
+END
+DTHTMLWriter.m
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTHTMLWriter.m
+END
+DTCSSStylesheet.m
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTCSSStylesheet.m
+END
+DTAttributedTextView.h
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTAttributedTextView.h
+END
+DTCoreTextParagraphStyle.m
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTCoreTextParagraphStyle.m
+END
+NSAttributedStringRunDelegates.h
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/NSAttributedStringRunDelegates.h
+END
+DTAttributedTextView.m
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTAttributedTextView.m
+END
+NSAttributedStringRunDelegates.m
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/NSAttributedStringRunDelegates.m
+END
+NSAttributedString+DTDebug.h
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/NSAttributedString+DTDebug.h
+END
+NSAttributedString+DTDebug.m
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/NSAttributedString+DTDebug.m
+END
+default.css
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/default.css
+END
+DTCoreText.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTCoreText.h
+END
+DTTextBlock.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTTextBlock.h
+END
+NSScanner+HTML.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/NSScanner+HTML.h
+END
+DTTextBlock.m
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTTextBlock.m
+END
+DTCoreTextLayoutFrame.h
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTCoreTextLayoutFrame.h
+END
+NSScanner+HTML.m
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/NSScanner+HTML.m
+END
+DTCoreTextLayoutFrame.m
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTCoreTextLayoutFrame.m
+END
+DTCoreTextLayoutFrame+Cursor.h
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTCoreTextLayoutFrame+Cursor.h
+END
+DTWeakSupport.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTWeakSupport.h
+END
+DTAccessibilityViewProxy.h
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTAccessibilityViewProxy.h
+END
+DTCoreTextLayoutFrame+Cursor.m
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTCoreTextLayoutFrame+Cursor.m
+END
+DTAccessibilityViewProxy.m
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTAccessibilityViewProxy.m
+END
+DTDictationPlaceholderTextAttachment.h
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTDictationPlaceholderTextAttachment.h
+END
+NSCoder+DTCompatibility.h
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/NSCoder+DTCompatibility.h
+END
+DTDictationPlaceholderTextAttachment.m
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTDictationPlaceholderTextAttachment.m
+END
+NSCoder+DTCompatibility.m
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/NSCoder+DTCompatibility.m
+END
+NSAttributedString+HTML.h
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/NSAttributedString+HTML.h
+END
+DTColorFunctions.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTColorFunctions.h
+END
+DTAnchorHTMLElement.h
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTAnchorHTMLElement.h
+END
+NSAttributedString+HTML.m
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/NSAttributedString+HTML.m
+END
+DTColorFunctions.m
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTColorFunctions.m
+END
+DTAnchorHTMLElement.m
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTAnchorHTMLElement.m
+END
+NSCharacterSet+HTML.h
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/NSCharacterSet+HTML.h
+END
+DTColor+Compatibility.h
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTColor+Compatibility.h
+END
+DTCoreTextFontDescriptor.h
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTCoreTextFontDescriptor.h
+END
+DTVideoTextAttachment.h
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTVideoTextAttachment.h
+END
+NSCharacterSet+HTML.m
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/NSCharacterSet+HTML.m
+END
+DTColor+Compatibility.m
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTColor+Compatibility.m
+END
+DTCoreTextFontDescriptor.m
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTCoreTextFontDescriptor.m
+END
+DTVideoTextAttachment.m
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTVideoTextAttachment.m
+END
+DTTextAttachment.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTTextAttachment.h
+END
+DTTextAttachment.m
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTTextAttachment.m
+END
+DTCoreTextMacros.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTCoreTextMacros.h
+END
+NSString+Paragraphs.h
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/NSString+Paragraphs.h
+END
+DTCoreTextLayoutLine.h
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTCoreTextLayoutLine.h
+END
+NSString+Paragraphs.m
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/NSString+Paragraphs.m
+END
+DTCoreTextLayoutLine.m
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTCoreTextLayoutLine.m
+END
+default.css.c
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/default.css.c
+END
+DTHTMLElement.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTHTMLElement.h
+END
+DTHTMLElement.m
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTHTMLElement.m
+END
+DTObjectTextAttachment.h
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTObjectTextAttachment.h
+END
+DTCoreTextFunctions.h
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTCoreTextFunctions.h
+END
+DTCoreTextGlyphRun.h
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTCoreTextGlyphRun.h
+END
+DTObjectTextAttachment.m
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTObjectTextAttachment.m
+END
+DTCoreTextFunctions.m
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTCoreTextFunctions.m
+END
+DTCoreTextGlyphRun.m
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTCoreTextGlyphRun.m
+END
+UIFont+DTCoreText.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/UIFont+DTCoreText.h
+END
+UIFont+DTCoreText.m
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/UIFont+DTCoreText.m
+END
+NSString+CSS.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/NSString+CSS.h
+END
+NSString+CSS.m
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/NSString+CSS.m
+END
+DTCompatibility.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTCompatibility.h
+END
+DTHorizontalRuleHTMLElement.h
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTHorizontalRuleHTMLElement.h
+END
+NSAttributedString+SmallCaps.h
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/NSAttributedString+SmallCaps.h
+END
+DTImage+HTML.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTImage+HTML.h
+END
+DTCoreTextLayouter.h
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTCoreTextLayouter.h
+END
+DTBreakHTMLElement.h
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTBreakHTMLElement.h
+END
+DTHorizontalRuleHTMLElement.m
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTHorizontalRuleHTMLElement.m
+END
+NSAttributedString+SmallCaps.m
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/NSAttributedString+SmallCaps.m
+END
+DTImage+HTML.m
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTImage+HTML.m
+END
+DTCoreTextLayouter.m
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTCoreTextLayouter.m
+END
+NSAttributedString+DTCoreText.h
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/NSAttributedString+DTCoreText.h
+END
+DTStylesheetHTMLElement.h
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTStylesheetHTMLElement.h
+END
+DTBreakHTMLElement.m
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTBreakHTMLElement.m
+END
+DTListItemHTMLElement.h
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTListItemHTMLElement.h
+END
+DTHTMLAttributedStringBuilder.h
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTHTMLAttributedStringBuilder.h
+END
+NSAttributedString+DTCoreText.m
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/NSAttributedString+DTCoreText.m
+END
+DTStylesheetHTMLElement.m
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTStylesheetHTMLElement.m
+END
+DTListItemHTMLElement.m
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTListItemHTMLElement.m
+END
+DTHTMLAttributedStringBuilder.m
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTHTMLAttributedStringBuilder.m
+END
+DTCoreTextFontCollection.h
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/dev/!svn/ver/8201/shaohuo/trunk/Mobile/cmallcms2/Pods/DTCoreText/Core/Source/DTCoreTextFontCollection.h
+END

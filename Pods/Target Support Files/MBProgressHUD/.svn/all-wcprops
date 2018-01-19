@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/Target%20Support%20Files/MBProgressHUD
+END
+MBProgressHUD.xcconfig
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/Target%20Support%20Files/MBProgressHUD/MBProgressHUD.xcconfig
+END
+Info.plist
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/Target%20Support%20Files/MBProgressHUD/Info.plist
+END
+MBProgressHUD.modulemap
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/Target%20Support%20Files/MBProgressHUD/MBProgressHUD.modulemap
+END
+MBProgressHUD-dummy.m
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/Target%20Support%20Files/MBProgressHUD/MBProgressHUD-dummy.m
+END
+MBProgressHUD-prefix.pch
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/Target%20Support%20Files/MBProgressHUD/MBProgressHUD-prefix.pch
+END
+MBProgressHUD-umbrella.h
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/Target%20Support%20Files/MBProgressHUD/MBProgressHUD-umbrella.h
+END

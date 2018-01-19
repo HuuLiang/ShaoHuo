@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/Target%20Support%20Files/JSQWebViewController
+END
+JSQWebViewController-umbrella.h
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/Target%20Support%20Files/JSQWebViewController/JSQWebViewController-umbrella.h
+END
+Info.plist
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/Target%20Support%20Files/JSQWebViewController/Info.plist
+END
+JSQWebViewController.xcconfig
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/Target%20Support%20Files/JSQWebViewController/JSQWebViewController.xcconfig
+END
+JSQWebViewController.modulemap
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/Target%20Support%20Files/JSQWebViewController/JSQWebViewController.modulemap
+END
+JSQWebViewController-dummy.m
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/Target%20Support%20Files/JSQWebViewController/JSQWebViewController-dummy.m
+END
+JSQWebViewController-prefix.pch
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/Target%20Support%20Files/JSQWebViewController/JSQWebViewController-prefix.pch
+END

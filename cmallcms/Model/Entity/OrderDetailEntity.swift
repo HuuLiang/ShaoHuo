@@ -75,6 +75,8 @@ class OrderDetailItemEntity: Mappable {
     var building: String?
     // 收件人
     var consignee: String?
+    //创建人电话号码
+    var make_order_phone: String?
     // 收件人电话号码
     var mobile: String?
     var receiver_lat: Double?
@@ -185,6 +187,8 @@ class OrderDetailItemEntity: Mappable {
         building <- map["building"]
         // 收件人
         consignee <- map["consignee"]
+        //创建人电话号码
+        make_order_phone<-map["make_order_phone"]
         // 收件人电话号码
         mobile <- map["mobile"]
         receiver_lat <- (map["receiver_lat"], doubleTransform)

@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/Target%20Support%20Files/ClusterPrePermissions
+END
+ClusterPrePermissions.xcconfig
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/Target%20Support%20Files/ClusterPrePermissions/ClusterPrePermissions.xcconfig
+END
+Info.plist
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/Target%20Support%20Files/ClusterPrePermissions/Info.plist
+END
+ClusterPrePermissions.modulemap
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/Target%20Support%20Files/ClusterPrePermissions/ClusterPrePermissions.modulemap
+END
+ClusterPrePermissions-dummy.m
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/Target%20Support%20Files/ClusterPrePermissions/ClusterPrePermissions-dummy.m
+END
+ClusterPrePermissions-prefix.pch
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/Target%20Support%20Files/ClusterPrePermissions/ClusterPrePermissions-prefix.pch
+END
+ClusterPrePermissions-umbrella.h
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/Target%20Support%20Files/ClusterPrePermissions/ClusterPrePermissions-umbrella.h
+END

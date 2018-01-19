@@ -391,7 +391,18 @@ final class HomeView: UserInterface {
             }
             else {
                 log.info("获取物流列表")
-                self.presenter.getOrderShippingList(orderId: orderListItem.order_id ?? "")
+                
+//                if orderListItem.shipping_type == 5 {
+//                    let dic = ["name":"堂食", "value":"5"]
+//                    self.presenter.shippingList.removeAll()
+//                    self.presenter.shippingList.append(dic as [String : AnyObject])
+//                    showOrderShippingList()
+//                    
+//                }else{
+                
+                    self.presenter.getOrderShippingList(orderId: orderListItem.order_id ?? "")
+//                }
+                
             }
         }
         if title == "取消订单" {
@@ -606,7 +617,21 @@ extension HomeView : UITableViewDataSource , UITableViewDelegate {
                     status_text = "退款申请中"
                 }
             }
-            
+            switch orderListItem.shipping_type! {
+            case 5:
+                status_text = "堂食-\(status_text)"
+            case 3:
+                status_text = "自提-\(status_text)"
+            case 2:
+                status_text = "其他物流-\(status_text)"
+            case 1:
+                status_text = "捎货物流-\(status_text)"
+            case 0:
+                status_text = "快递-\(status_text)"
+            default:
+                status_text = "\(status_text)"
+                
+            }
             tmpCell.configLabtlText(leftLabelAttributeString: NSAttributedString(string: orderListItem.username ?? ""),
                                     rightLabelAttributeString: NSAttributedString(string: status_text))
             
@@ -641,6 +666,13 @@ extension HomeView : UITableViewDataSource , UITableViewDelegate {
             let address = orderListItem.address ?? ""
             
             tmpCell.receiveAddressLabel.text = "\(province_name)\(city_name)\(district_name)\(address)"
+            if orderListItem.shipping_type == 5 {
+                 tmpCell.receiveAddressLabel.text = "堂食"
+            }
+            if orderListItem.shipping_type == 3 {
+                tmpCell.receiveAddressLabel.text = "上门自提"
+            }
+            
             
             cell = tmpCell
         }

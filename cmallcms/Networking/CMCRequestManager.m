@@ -18,7 +18,7 @@
  openssl s_client -connect service-app.ishaohuo.cn:443 /dev/null | openssl x509 -outform DER > https.cer
  
 */
-
+//
 //NSString * const AFAppDotNetAPIBaseURLString = @"https://test-cmall-b.ishaohuo.cn/";
 //NSString * const CMallHTML5HostUrlString = @"http://test-cmall.ishaohuo.cn/";
 

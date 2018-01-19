@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/XCGLogger/Sources/XCGLogger/Filters
+END
+DevFilter.swift
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/XCGLogger/Sources/XCGLogger/Filters/DevFilter.swift
+END
+FileNameFilter.swift
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/XCGLogger/Sources/XCGLogger/Filters/FileNameFilter.swift
+END
+FilterProtocol.swift
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/XCGLogger/Sources/XCGLogger/Filters/FilterProtocol.swift
+END
+UserInfoFilter.swift
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/XCGLogger/Sources/XCGLogger/Filters/UserInfoFilter.swift
+END
+TagFilter.swift
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/XCGLogger/Sources/XCGLogger/Filters/TagFilter.swift
+END

@@ -1,0 +1,143 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/ObjectMapper/Sources
+END
+Mapper.swift
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/ObjectMapper/Sources/Mapper.swift
+END
+MapError.swift
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/ObjectMapper/Sources/MapError.swift
+END
+IntegerOperators.swift
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/ObjectMapper/Sources/IntegerOperators.swift
+END
+FromJSON.swift
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/ObjectMapper/Sources/FromJSON.swift
+END
+DateFormatterTransform.swift
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/ObjectMapper/Sources/DateFormatterTransform.swift
+END
+URLTransform.swift
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/ObjectMapper/Sources/URLTransform.swift
+END
+EnumTransform.swift
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/ObjectMapper/Sources/EnumTransform.swift
+END
+TransformOf.swift
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/ObjectMapper/Sources/TransformOf.swift
+END
+DictionaryTransform.swift
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/ObjectMapper/Sources/DictionaryTransform.swift
+END
+ISO8601DateTransform.swift
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/ObjectMapper/Sources/ISO8601DateTransform.swift
+END
+EnumOperators.swift
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/ObjectMapper/Sources/EnumOperators.swift
+END
+NSDecimalNumberTransform.swift
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/ObjectMapper/Sources/NSDecimalNumberTransform.swift
+END
+DataTransform.swift
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/ObjectMapper/Sources/DataTransform.swift
+END
+DateTransform.swift
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/ObjectMapper/Sources/DateTransform.swift
+END
+TransformOperators.swift
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/ObjectMapper/Sources/TransformOperators.swift
+END
+ToJSON.swift
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/ObjectMapper/Sources/ToJSON.swift
+END
+Map.swift
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/ObjectMapper/Sources/Map.swift
+END
+CustomDateFormatTransform.swift
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/ObjectMapper/Sources/CustomDateFormatTransform.swift
+END
+TransformType.swift
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/ObjectMapper/Sources/TransformType.swift
+END
+Operators.swift
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/ObjectMapper/Sources/Operators.swift
+END
+HexColorTransform.swift
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/ObjectMapper/Sources/HexColorTransform.swift
+END
+Mappable.swift
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/ObjectMapper/Sources/Mappable.swift
+END
+ImmutableMappable.swift
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/dev/!svn/ver/7972/shaohuo/trunk/Mobile/cmallcms2/Pods/ObjectMapper/Sources/ImmutableMappable.swift
+END

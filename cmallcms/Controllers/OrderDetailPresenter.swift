@@ -228,6 +228,8 @@ final class OrderDetailPresenter: Presenter {
                 }
                 else if shipping_type == ORDER_SHIPPING_TYPE_SELF {
                     attributeStrings.append("自提")
+                }else if shipping_type == ORDER_SHIPPING_TYPE_TS {
+                    attributeStrings.append("堂食")
                 }
                 else if shipping_type == ORDER_SHIPPING_TYPE_OTHER {
                     attributeStrings.append("其它物流")
